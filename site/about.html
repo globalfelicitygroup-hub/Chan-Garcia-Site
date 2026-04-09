@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Independent Governance Risk Advisory for Mexico | Chan García</title>
+<meta name="description" content="Chan García is an independent advisory firm specializing in financially quantified governance and regulatory risk assessment for Mexico. Big Four alumni. PRIME authorized.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Libre+Franklin:wght@200;300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0c1a2a;
+  --navy-mid: #132438;
+  --navy-light: #1a2f47;
+  --ivory: #faf8f4;
+  --ivory-warm: #f3f0e8;
+  --gold: #c2a24e;
+  --gold-muted: #b89a47;
+  --gold-pale: rgba(194, 162, 78, 0.12);
+  --charcoal: #2c2c2c;
+  --graphite: #5a5a58;
+  --stone: #8a8884;
+  --rule: rgba(12, 26, 42, 0.1);
+  --rule-light: rgba(255, 255, 255, 0.08);
+  --display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --body: 'Libre Franklin', -apple-system, Helvetica, Arial, sans-serif;
+  --mono: 'IBM Plex Mono', 'SF Mono', 'Consolas', monospace;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 16px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--body);
+  background: var(--ivory);
+  color: var(--charcoal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+::selection { background: var(--gold); color: var(--navy); }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+.container { max-width: 1180px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 72px); }
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.anim { opacity: 0; animation: fadeUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+.anim-fade { opacity: 0; animation: fadeIn 1s ease forwards; }
+.d1 { animation-delay: 0.08s; }
+.d2 { animation-delay: 0.2s; }
+.d3 { animation-delay: 0.35s; }
+.d4 { animation-delay: 0.5s; }
+.d5 { animation-delay: 0.65s; }
+.d6 { animation-delay: 0.8s; }
+
+/* ─── SECTION LABEL ─── */
+.section-label {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 44px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.section-label::after {
+  content: '';
+  height: 1px;
+  width: 64px;
+  background: var(--gold);
+  opacity: 0.4;
+}
+.section-label--light { color: var(--gold); }
+.section-label--light::after { background: var(--gold); opacity: 0.25; }
+
+/* ════════════════════════════════════════════════════════════
+   NAVIGATION (identical to homepage)
+   ════════════════════════════════════════════════════════════ */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(250, 248, 244, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 5vw, 72px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+.nav-wordmark {
+  font-family: var(--display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+.nav-links { display: flex; gap: 28px; align-items: center; }
+.nav-links a {
+  font-family: var(--body);
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--graphite);
+  transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--gold-muted); }
+.nav-links a.active { color: var(--navy); }
+.nav-cta-btn {
+  font-family: var(--mono) !important;
+  font-size: 0.68rem !important;
+  letter-spacing: 0.12em !important;
+  padding: 10px 26px !important;
+  border: 1.5px solid var(--navy) !important;
+  color: var(--navy) !important;
+  transition: all 0.35s !important;
+}
+.nav-cta-btn:hover {
+  background: var(--navy) !important;
+  color: var(--ivory) !important;
+}
+
+/* ════════════════════════════════════════════════════════════
+   PAGE HERO
+   ════════════════════════════════════════════════════════════ */
+.page-hero {
+  padding-top: 148px;
+  padding-bottom: 80px;
+  border-bottom: 1px solid var(--rule);
+}
+.page-hero-descriptor {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 36px;
+}
+.page-hero h1 {
+  font-family: var(--display);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  color: var(--navy);
+  max-width: 720px;
+  margin-bottom: 32px;
+}
+.page-hero h1 em {
+  font-style: italic;
+  color: var(--gold-muted);
+}
+.page-hero-sub {
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--graphite);
+  max-width: 600px;
+}
+
+/* ════════════════════════════════════════════════════════════
+   THESIS SECTION
+   ════════════════════════════════════════════════════════════ */
+.thesis {
+  padding: 96px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.thesis-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.thesis h2 {
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--navy);
+}
+.thesis h2 em { font-style: italic; color: var(--gold-muted); }
+.thesis-text p {
+  font-size: 0.92rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--graphite);
+  margin-bottom: 20px;
+}
+.thesis-text p:last-child { margin-bottom: 0; }
+.thesis-callout {
+  font-family: var(--display);
+  font-size: 1.12rem;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--navy);
+  padding: 24px 0 24px 28px;
+  border-left: 2px solid var(--gold);
+  margin: 28px 0;
+}
+
+/* ════════════════════════════════════════════════════════════
+   INDEPENDENCE SECTION
+   ════════════════════════════════════════════════════════════ */
+.independence {
+  padding: 96px 0;
+  background: var(--navy);
+  color: var(--ivory);
+}
+.ind-header {
+  margin-bottom: 56px;
+  max-width: 580px;
+}
+.ind-header h2 {
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--ivory);
+  margin-bottom: 20px;
+}
+.ind-header p {
+  font-size: 0.92rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(250, 248, 244, 0.5);
+}
+.ind-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--rule-light);
+  border: 1px solid var(--rule-light);
+}
+.ind-card {
+  background: var(--navy);
+  padding: 44px 36px;
+}
+.ind-card-icon {
+  font-family: var(--display);
+  font-size: 2rem;
+  font-weight: 400;
+  color: rgba(194, 162, 78, 0.25);
+  margin-bottom: 20px;
+}
+.ind-card h3 {
+  font-family: var(--body);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--ivory);
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+.ind-card p {
+  font-size: 0.8rem;
+  font-weight: 300;
+  line-height: 1.72;
+  color: rgba(250, 248, 244, 0.45);
+}
+
+/* ════════════════════════════════════════════════════════════
+   MEXICO SPECIALIZATION
+   ════════════════════════════════════════════════════════════ */
+.mexico {
+  padding: 96px 0;
+  background: var(--ivory-warm);
+  border-bottom: 1px solid var(--rule);
+}
+.mexico-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.mexico h2 {
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--navy);
+}
+.mexico h2 em { font-style: italic; color: var(--gold-muted); }
+.mexico-text p {
+  font-size: 0.92rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--graphite);
+  margin-bottom: 20px;
+}
+.mexico-text p:last-child { margin-bottom: 0; }
+.mexico-pillars {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  margin-top: 56px;
+}
+.mx-pillar {
+  background: var(--ivory);
+  padding: 36px 32px;
+}
+.mx-pillar-title {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.mx-pillar p {
+  font-size: 0.82rem;
+  font-weight: 300;
+  line-height: 1.72;
+  color: var(--graphite);
+}
+
+/* ════════════════════════════════════════════════════════════
+   FOUNDERS
+   ════════════════════════════════════════════════════════════ */
+.founders {
+  padding: 96px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.founders-header {
+  margin-bottom: 56px;
+  max-width: 580px;
+}
+.founders-header h2 {
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+.founders-header h2 em { font-style: italic; color: var(--gold-muted); }
+.founders-header p {
+  font-size: 0.92rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--graphite);
+}
+
+.founder-card {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 0;
+  border: 1px solid var(--rule);
+  margin-bottom: 24px;
+}
+.founder-card:last-child { margin-bottom: 0; }
+
+.founder-sidebar {
+  background: var(--ivory-warm);
+  padding: 48px 36px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--rule);
+}
+.founder-avatar {
+  width: 80px;
+  height: 80px;
+  background: var(--navy);
+  border-radius: 2px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--gold);
+  letter-spacing: 0.06em;
+}
+.founder-name {
+  font-family: var(--display);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.founder-title {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 28px;
+}
+.founder-credentials {
+  margin-top: auto;
+}
+.founder-cred {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--charcoal);
+  margin-bottom: 10px;
+  letter-spacing: 0.01em;
+}
+.founder-cred::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  background: var(--gold);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.founder-bio {
+  padding: 48px;
+}
+.founder-bio p {
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.82;
+  color: var(--graphite);
+  margin-bottom: 18px;
+}
+.founder-bio p:last-child { margin-bottom: 0; }
+.founder-bio-label {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--rule);
+}
+.founder-domains {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--rule);
+}
+.founder-domain {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.04em;
+  padding: 5px 14px;
+  background: var(--gold-pale);
+  color: var(--charcoal);
+  border: 1px solid rgba(194, 162, 78, 0.15);
+}
+
+/* ════════════════════════════════════════════════════════════
+   METHODOLOGY
+   ════════════════════════════════════════════════════════════ */
+.methodology {
+  padding: 96px 0;
+  background: var(--navy);
+  color: var(--ivory);
+}
+.method-header {
+  margin-bottom: 56px;
+  max-width: 600px;
+}
+.method-header h2 {
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--ivory);
+  margin-bottom: 20px;
+}
+.method-header h2 em { font-style: italic; color: var(--gold); }
+.method-header p {
+  font-size: 0.92rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(250, 248, 244, 0.5);
+}
+.method-steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background: var(--rule-light);
+  border: 1px solid var(--rule-light);
+}
+.method-step {
+  background: var(--navy);
+  padding: 40px 28px;
+}
+.method-step-num {
+  font-family: var(--display);
+  font-size: 2rem;
+  font-weight: 400;
+  color: rgba(194, 162, 78, 0.25);
+  margin-bottom: 20px;
+}
+.method-step h3 {
+  font-family: var(--body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ivory);
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+.method-step p {
+  font-size: 0.78rem;
+  font-weight: 300;
+  line-height: 1.72;
+  color: rgba(250, 248, 244, 0.45);
+}
+.method-note {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid var(--rule-light);
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(250, 248, 244, 0.4);
+  max-width: 720px;
+}
+.method-note strong {
+  color: rgba(250, 248, 244, 0.65);
+  font-weight: 500;
+}
+
+/* ════════════════════════════════════════════════════════════
+   CREDENTIALS STRIP
+   ════════════════════════════════════════════════════════════ */
+.credentials {
+  padding: 96px 0;
+  background: var(--ivory-warm);
+}
+.cred-header {
+  margin-bottom: 48px;
+}
+.cred-header h2 {
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--navy);
+}
+.cred-header h2 em { font-style: italic; color: var(--gold-muted); }
+
+.cred-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+.cred-card {
+  background: var(--ivory);
+  padding: 40px 36px;
+}
+.cred-card-label {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--rule);
+}
+.cred-card h3 {
+  font-family: var(--display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+.cred-card p {
+  font-size: 0.8rem;
+  font-weight: 300;
+  line-height: 1.72;
+  color: var(--graphite);
+}
+
+/* ════════════════════════════════════════════════════════════
+   CTA
+   ════════════════════════════════════════════════════════════ */
+.cta {
+  padding: 96px 0;
+  background: var(--navy);
+  position: relative;
+}
+.cta::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--gold);
+}
+.cta-inner {
+  text-align: center;
+  max-width: 580px;
+  margin: 0 auto;
+}
+.cta-overline {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 28px;
+}
+.cta-inner h2 {
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--ivory);
+  margin-bottom: 24px;
+}
+.cta-inner h2 em { font-style: italic; color: var(--gold); }
+.cta-inner > p {
+  font-size: 0.92rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(250, 248, 244, 0.5);
+  margin-bottom: 40px;
+}
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 18px 44px;
+  background: var(--gold);
+  color: var(--navy);
+  border: 1.5px solid var(--gold);
+  cursor: pointer;
+  transition: all 0.35s;
+}
+.cta-btn:hover {
+  background: transparent;
+  color: var(--gold);
+}
+.cta-contact {
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 1px solid var(--rule-light);
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+.cta-contact-item {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  color: rgba(250, 248, 244, 0.35);
+}
+.cta-contact-item a {
+  color: rgba(250, 248, 244, 0.55);
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s;
+}
+.cta-contact-item a:hover {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+/* ════════════════════════════════════════════════════════════
+   FOOTER
+   ════════════════════════════════════════════════════════════ */
+footer {
+  padding: 40px 0;
+  background: var(--ivory);
+  border-top: 1px solid var(--rule);
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-brand {
+  font-family: var(--display);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.footer-right a {
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--stone);
+  transition: color 0.3s;
+}
+.footer-right a:hover { color: var(--gold-muted); }
+.footer-copy {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  color: var(--stone);
+}
+.footer-tagline {
+  text-align: center;
+  padding: 20px 0 0;
+  margin-top: 20px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--display);
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--gold-muted);
+}
+
+/* ════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════════════════════ */
+@media (max-width: 960px) {
+  .thesis-grid, .mexico-grid { grid-template-columns: 1fr; gap: 36px; }
+  .ind-grid { grid-template-columns: 1fr !important; }
+  .mexico-pillars { grid-template-columns: 1fr; }
+  .method-steps { grid-template-columns: repeat(2, 1fr); }
+  .founder-card { grid-template-columns: 1fr; }
+  .founder-sidebar { border-right: none; border-bottom: 1px solid var(--rule); }
+  .cred-grid { grid-template-columns: 1fr; }
+  .cta-contact { flex-direction: column; gap: 10px; }
+  .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
+  .footer-right { flex-direction: column; gap: 12px; }
+}
+@media (max-width: 600px) {
+  .nav-links a:not(.nav-cta-btn) { display: none; }
+  .page-hero h1 { font-size: 2rem; }
+  .method-steps { grid-template-columns: 1fr; }
+  .founder-sidebar { padding: 32px 28px; }
+  .founder-bio { padding: 32px 28px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════════ NAV ════════ -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-wordmark">Chan García</a>
+    <div class="nav-links">
+      <a href="services.html">Services</a>
+      <a href="about.html" class="active">About</a>
+      <a href="evidence.html">Evidence</a>
+      <a href="exposure-report.html">The Exposure Report</a>
+      <a href="contact.html" class="nav-cta-btn">Engage</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════ PAGE HERO ════════ -->
+<section class="page-hero">
+  <div class="container">
+    <p class="page-hero-descriptor anim d1">About the firm</p>
+    <h1 class="anim d2">Built to answer the question that <em>matters most</em></h1>
+    <p class="page-hero-sub anim d3">Chan García exists because the market needed an independent firm focused on one thing: converting governance and regulatory risk in Mexico into financially quantified exposure that decision-makers can act on.</p>
+  </div>
+</section>
+
+<!-- ════════ THESIS ════════ -->
+<section class="thesis">
+  <div class="container">
+    <div class="section-label">Why we exist</div>
+    <div class="thesis-grid">
+      <h2>The market had advisors. It didn't have <em>independent financial translation.</em></h2>
+      <div class="thesis-text">
+        <p>Legal and compliance advisors in Mexico can identify governance gaps. Consulting firms can catalog regulatory concerns. What neither consistently delivers is a financially quantified view of what that risk actually costs — expressed in terms an investment committee can evaluate.</p>
+        <p>Chan García was founded to fill that specific gap. We built a firm around a single thesis: that governance and regulatory risk becomes actionable only when it is expressed as a financial exposure range with probability-weighted scenarios.</p>
+        <div class="thesis-callout">We don't identify risk and then sell implementation. We quantify exposure and then step aside so you can make a clear-eyed decision.</div>
+        <p>This independence is not a limitation of our practice — it is the foundation of our credibility. When Chan García delivers an exposure range, there is no implementation contract, transformation engagement, or remediation proposal behind it. The number is the product.</p>
+        <p>Our team is deliberately multidisciplinary — corporate lawyers, former auditors, governance specialists, and actuaries working together. That composition exists because translating legal risk into financial terms requires more than legal expertise. It requires actuarial methodology, risk modeling capability, and fluency in the frameworks that institutional decision-makers rely on.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ INDEPENDENCE ════════ -->
+<section class="independence">
+  <div class="container">
+    <div class="section-label section-label--light">Independence by design</div>
+    <div class="ind-header">
+      <h2>Assessment without conflict. Conclusions without agenda.</h2>
+      <p>Most firms that evaluate risk also sell the solution. That economic structure creates an inherent tension. Chan García was designed without it.</p>
+    </div>
+    <div class="ind-grid" style="grid-template-columns: repeat(4, 1fr);">
+      <div class="ind-card">
+        <div class="ind-card-icon">01</div>
+        <h3>We assess. We do not implement.</h3>
+        <p>Our engagements end with a deliverable: a financially quantified exposure range, a governance risk score, a committee-ready report. We do not sell remediation, transformation, or ongoing implementation services that would compromise the objectivity of our assessment.</p>
+      </div>
+      <div class="ind-card">
+        <div class="ind-card-icon">02</div>
+        <h3>Our conclusions are conflict-free.</h3>
+        <p>When we report an exposure of $3M–$5M, that number exists to inform your decision — not to create demand for our next engagement. Investment committees rely on this structural independence to defend their conclusions to LPs and boards.</p>
+      </div>
+      <div class="ind-card">
+        <div class="ind-card-icon">03</div>
+        <h3>Our methodology is standards-based.</h3>
+        <p>Assessments are grounded in international compliance standards, OECD governance principles, and Mexico's CCE Code of Best Practices. This foundation ensures our outputs are defensible, comparable, and recognized by institutional stakeholders and regulators.</p>
+      </div>
+      <div class="ind-card">
+        <div class="ind-card-icon">04</div>
+        <h3>We operate with maximum discretion.</h3>
+        <p>Governance risk evaluation requires access to sensitive corporate information. We operate under strict confidentiality protocols, data protection compliance, and anti-corruption standards. Discretion is embedded in how we work, not just what we promise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ MEXICO SPECIALIZATION ════════ -->
+<section class="mexico">
+  <div class="container">
+    <div class="section-label">Mexico specialization</div>
+    <div class="mexico-grid">
+      <h2>Depth in one market beats breadth <em>across many</em></h2>
+      <div class="mexico-text">
+        <p>Mexico's regulatory environment is jurisdiction-specific, politically sensitive, and structurally different from other Latin American markets. Generic governance frameworks designed for Brazil, Colombia, or the broader region systematically underestimate the exposure created by Mexico's specific compliance dynamics.</p>
+        <p>Chan García focuses exclusively on Mexico — its federal and state regulatory structures, its labor and environmental compliance regimes, its tax authority enforcement patterns, and its corporate governance norms. This depth allows us to identify exposure vectors that generalist firms miss and to calibrate probability estimates with country-specific precision.</p>
+        <p>For investors and operators who need accuracy in one market rather than coverage across many, that specialization is the difference between a defensible conclusion and a generic assessment.</p>
+      </div>
+    </div>
+    <div class="mexico-pillars">
+      <div class="mx-pillar">
+        <div class="mx-pillar-title">Regulatory complexity</div>
+        <p>Federal, state, and municipal regulatory layers create overlapping compliance obligations that vary by jurisdiction, sector, and corporate structure. Foreign-owned entities face additional scrutiny.</p>
+      </div>
+      <div class="mx-pillar">
+        <div class="mx-pillar-title">Labor & environmental exposure</div>
+        <p>STPS compliance, IMMEX obligations, and environmental permitting each carry material financial exposure that is frequently underestimated in standard legal due diligence.</p>
+      </div>
+      <div class="mx-pillar">
+        <div class="mx-pillar-title">Tax authority enforcement</div>
+        <p>SAT enforcement patterns have shifted materially in recent years. Transfer pricing scrutiny, related-party transaction review, and compliance documentation requirements all create quantifiable exposure.</p>
+      </div>
+      <div class="mx-pillar">
+        <div class="mx-pillar-title">Governance culture evolution</div>
+        <p>Mexican companies are transitioning from informal governance to institutional frameworks. Understanding where each company sits on that spectrum is essential for accurate risk assessment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ METHODOLOGY ════════ -->
+<section class="methodology">
+  <div class="container">
+    <div class="section-label section-label--light">How we work</div>
+    <div class="method-header">
+      <h2>A structured, <em>repeatable</em> process</h2>
+      <p>Every assessment follows the same five-phase methodology — designed to produce comparable, auditable outputs that institutional committees can reference and defend.</p>
+    </div>
+    <div class="method-steps">
+      <div class="method-step">
+        <div class="method-step-num">01</div>
+        <h3>Scope & Framework Definition</h3>
+        <p>We define the assessment scope, identify applicable regulatory frameworks, and select the reference standards appropriate to the entity's sector, jurisdiction, and corporate structure in Mexico.</p>
+      </div>
+      <div class="method-step">
+        <div class="method-step-num">02</div>
+        <h3>Document Review & Verification</h3>
+        <p>We review governance documents, compliance policies, organizational structures, codes of ethics, and contractual frameworks. We conduct structured interviews with directors, board members, and key function owners.</p>
+      </div>
+      <div class="method-step">
+        <div class="method-step-num">03</div>
+        <h3>Control Testing</h3>
+        <p>We verify the operational effectiveness of internal controls, segregation of duties, data protection measures, and compliance mechanisms through design and operational testing.</p>
+      </div>
+      <div class="method-step">
+        <div class="method-step-num">04</div>
+        <h3>Actuarial Financial Quantification</h3>
+        <p>We translate all legal, governance, and compliance findings into financial terms using professional actuarial methodology. Scenario modeling produces probability-weighted exposure ranges — not narrative risk descriptions.</p>
+      </div>
+      <div class="method-step">
+        <div class="method-step-num">05</div>
+        <h3>Defensible Report & Briefing</h3>
+        <p>We deliver an executive-grade report with findings, governance risk scores, exposure heatmaps, quantified financial ranges, and prioritized action items — supported by recognized reference frameworks.</p>
+      </div>
+    </div>
+    <div class="method-note">
+      <strong>Frameworks and standards:</strong> Our methodology is grounded in international compliance standards, OECD governance principles, Mexico's CCE Code of Best Practices for Corporate Governance, and sector-specific regulatory requirements. This standards-based foundation ensures our outputs are defensible, comparable, and recognized by institutional stakeholders.
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FOUNDERS ════════ -->
+<section class="founders">
+  <div class="container">
+    <div class="section-label">The team</div>
+    <div class="founders-header">
+      <h2>Credentials that <em>inform</em> the methodology</h2>
+      <p>Chan García was founded by practitioners whose experience spans corporate governance, transactional advisory, regulatory risk evaluation, and senior government legal roles in Mexico.</p>
+    </div>
+
+    <!-- Elizabeth Chan -->
+    <div class="founder-card">
+      <div class="founder-sidebar">
+        <div class="founder-avatar">EC</div>
+        <div class="founder-name">Elizabeth Chan</div>
+        <div class="founder-title">Founding Partner</div>
+        <div class="founder-credentials">
+          <div class="founder-cred">Deloitte — Director, Corporate Legal Practice</div>
+          <div class="founder-cred">Grupo PepsiCo — Corporate Legal Manager</div>
+          <div class="founder-cred">Office of the President of Mexico</div>
+          <div class="founder-cred">National Security Commission</div>
+          <div class="founder-cred">15+ years corporate advisory leadership</div>
+        </div>
+      </div>
+      <div class="founder-bio">
+        <div class="founder-bio-label">Background</div>
+        <p>Elizabeth Chan brings more than two decades of experience advising corporations on governance, mergers and acquisitions, strategic transactions, and corporate structuring. Her work focuses on helping companies design governance structures, manage complex transactions, and navigate the regulatory environments that affect long-term business outcomes.</p>
+        <p>Before co-founding Chan García, Elizabeth served as Director of Corporate Legal Practice at Deloitte (Galaz, Yamazaki & Ruiz Urquiza), where she worked on governance matters, joint ventures, due diligence processes, and corporate restructuring. She previously held the role of Corporate Legal Manager at Grupo PepsiCo, where she oversaw corporate restructuring, governance, contractual frameworks, and compliance-related matters.</p>
+        <p>Elizabeth also held senior government positions in Mexico's federal administration, including Director of Analysis of Legal Petitions within the Legal Counsel's Office of the President of Mexico, and Director within the Legal Affairs and Human Rights Unit of the National Security Commission. This combination of private sector transactional experience and senior government legal advisory work gives her a deep understanding of both corporate operations and regulatory frameworks in Mexico.</p>
+        <div class="founder-domains">
+          <span class="founder-domain">Corporate governance</span>
+          <span class="founder-domain">M&A and joint ventures</span>
+          <span class="founder-domain">Corporate structuring</span>
+          <span class="founder-domain">Contract negotiation</span>
+          <span class="founder-domain">Regulatory analysis</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pedro García Chan -->
+    <div class="founder-card">
+      <div class="founder-sidebar">
+        <div class="founder-avatar">PG</div>
+        <div class="founder-name">Pedro García Chan</div>
+        <div class="founder-title">Founding Partner</div>
+        <div class="founder-credentials">
+          <div class="founder-cred">PRIME Authorized Evaluator</div>
+          <div class="founder-cred">GRC Framework Specialist</div>
+          <div class="founder-cred">Financial exposure quantification</div>
+          <div class="founder-cred">Corporate governance certification</div>
+        </div>
+      </div>
+      <div class="founder-bio">
+        <div class="founder-bio-label">Background</div>
+        <p>Pedro García Chan leads the firm's practice in corporate governance evaluation, regulatory risk assessment, and the financial quantification of legal and compliance exposure. His work centers on developing independent evaluations of governance, risk, and compliance (GRC) frameworks for companies operating in Mexico — translating potential legal exposure into measurable financial metrics that support executive decision-making and access to capital markets.</p>
+        <p>Pedro is recognized for his work related to the PRIME Certification, a corporate governance certification designed to help companies strengthen governance practices and gain access to financing. Chan García is one of only 36 authorized firms in Mexico permitted to issue PRIME Certification evaluations — a designation granted by the PRIME Certification Committee composed of BANCOMEXT, NAFIN, BMV, BIVA, and AMIB.</p>
+        <p>Through his advisory practice, Pedro helps companies transition from informal governance structures to institutional frameworks capable of supporting long-term growth, transparency, and access to capital. His methodology translates governance and compliance structures into strategic advantages that support financing readiness, investment due diligence, and institutional credibility.</p>
+        <div class="founder-domains">
+          <span class="founder-domain">Governance evaluation</span>
+          <span class="founder-domain">GRC frameworks</span>
+          <span class="founder-domain">Financial risk quantification</span>
+          <span class="founder-domain">PRIME Certification</span>
+          <span class="founder-domain">Institutional governance</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════ CREDENTIALS ════════ -->
+<section class="credentials">
+  <div class="container">
+    <div class="section-label">Affiliations & authorizations</div>
+    <div class="cred-header">
+      <h2>Validated by <em>institutions</em></h2>
+    </div>
+    <div class="cred-grid">
+      <div class="cred-card">
+        <div class="cred-card-label">Authorization</div>
+        <h3>PRIME Certified Evaluator</h3>
+        <p>One of only 36 firms in Mexico authorized to issue PRIME Certification evaluations — a corporate governance certification governed by BANCOMEXT, NAFIN, BMV, BIVA, and AMIB. This authorization enables Chan García to evaluate companies seeking governance certification for financing and capital market access.</p>
+      </div>
+      <div class="cred-card">
+        <div class="cred-card-label">Recognition</div>
+        <h3>Ranked Leading Compliance Firm</h3>
+        <p>Recognized in national rankings as a leading firm in compliance advisory in Mexico. This recognition reflects the firm's specialization in governance risk evaluation and financial exposure quantification — not general legal practice.</p>
+      </div>
+      <div class="cred-card">
+        <div class="cred-card-label">Affiliation</div>
+        <h3>COPARMEX Board of Directors</h3>
+        <p>Member of the Board of Directors of COPARMEX Metropolitano, Mexico's primary employers' confederation. This role connects the firm directly to corporate governance policy dialogue and the broader Mexican business ecosystem.</p>
+      </div>
+    </div>
+    <div class="cred-grid" style="margin-top: 1px;">
+      <div class="cred-card">
+        <div class="cred-card-label">Background</div>
+        <h3>Big Four Alumni</h3>
+        <p>Founding partner experience at Deloitte (Galaz, Yamazaki & Ruiz Urquiza) in corporate governance, due diligence, and corporate restructuring — combined with multinational corporate experience at PepsiCo and senior government roles in Mexico's federal administration.</p>
+      </div>
+      <div class="cred-card">
+        <div class="cred-card-label">Standards</div>
+        <h3>OECD & CCE Frameworks</h3>
+        <p>Assessment methodology grounded in OECD governance principles and Mexico's CCE Code of Best Practices for Corporate Governance. This standards-based foundation ensures outputs are internationally recognized and institutionally defensible.</p>
+      </div>
+      <div class="cred-card">
+        <div class="cred-card-label">Team</div>
+        <h3>Multidisciplinary Practice</h3>
+        <p>The team includes corporate lawyers, former auditors, governance specialists, risk management professionals, and actuaries. This composition enables the firm to bridge legal findings and financial quantification in a single engagement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ CTA ════════ -->
+<section class="cta">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="cta-overline">Ready to know your real exposure?</div>
+      <h2>Start with a <em>Conversation.</em></h2>
+      <p>A 30-minute call with a Chan García partner is the fastest way to understand whether an independent assessment is right for your situation. No commitment. No sales process. A direct conversation about your exposure.</p>
+      <a href="/cdn-cgi/l/email-protection#4a2925243e2b293e0a29222b242d2b3829232b64292527" class="cta-btn">Request an Independent Assessment</a>
+      <div class="cta-contact">
+        <div class="cta-contact-item">Mexico City, Mexico</div>
+        <div class="cta-contact-item"><a href="/cdn-cgi/l/email-protection#4f2c20213b2e2c3b0f2c272e21282e3d2c262e612c2022"><span class="__cf_email__" data-cfemail="7e1d11100a1f1d0a3e1d161f10191f0c1d171f501d1113">[email&#160;protected]</span></a></div>
+        <div class="cta-contact-item"><a href="https://changarcia.com">changarcia.com</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">Chan García</div>
+      <div class="footer-right">
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="Ch
+<footer style="padding:40px 0;background:#faf8f4;border-top:1px solid rgba(12,26,42,0.1);">
+  <div style="max-width:1180px;margin:0 auto;padding:0 clamp(24px,5vw,72px);display:flex;justify-content:space-between;align-items:center;">
+    <div style="font-family:'Playfair Display',Georgia,serif;font-size:1rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#0c1a2a;">Chan García</div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:0.6rem;color:#8a8884;">© 2026 Chan García</div>
+  </div>
+  <div style="text-align:center;padding:20px 0 0;margin-top:20px;border-top:1px solid rgba(12,26,42,0.1);font-family:'Playfair Display',Georgia,serif;font-size:0.88rem;font-style:italic;color:#b89a47;">We Make Governance Measurable.</div>
+</footer>
+</body>
+</html>

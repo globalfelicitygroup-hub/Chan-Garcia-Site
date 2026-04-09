@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Independent Governance Risk Assessment & Monitoring | Chan García</title>
+<meta name="description" content="Governance risk assessment, financial exposure quantification, and regulatory monitoring services for private equity, investment committees, and companies operating in Mexico.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Libre+Franklin:wght@200;300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0c1a2a;
+  --navy-mid: #132438;
+  --navy-light: #1a2f47;
+  --ivory: #faf8f4;
+  --ivory-warm: #f3f0e8;
+  --gold: #c2a24e;
+  --gold-muted: #b89a47;
+  --gold-pale: rgba(194, 162, 78, 0.12);
+  --charcoal: #2c2c2c;
+  --graphite: #5a5a58;
+  --stone: #8a8884;
+  --rule: rgba(12, 26, 42, 0.1);
+  --rule-light: rgba(255, 255, 255, 0.08);
+  --red-exposure: #a63d3d;
+  --green-outcome: #4d7a5c;
+  --display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --body: 'Libre Franklin', -apple-system, Helvetica, Arial, sans-serif;
+  --mono: 'IBM Plex Mono', 'SF Mono', 'Consolas', monospace;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 16px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--body);
+  background: var(--ivory);
+  color: var(--charcoal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+::selection { background: var(--gold); color: var(--navy); }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+.container { max-width: 1180px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 72px); }
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.anim { opacity: 0; animation: fadeUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+.anim-fade { opacity: 0; animation: fadeIn 1s ease forwards; }
+.d1 { animation-delay: 0.08s; }
+.d2 { animation-delay: 0.2s; }
+.d3 { animation-delay: 0.35s; }
+.d4 { animation-delay: 0.5s; }
+.d5 { animation-delay: 0.65s; }
+.d6 { animation-delay: 0.8s; }
+
+/* ─── SECTION LABEL ─── */
+.section-label {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 44px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.section-label::after {
+  content: '';
+  height: 1px;
+  width: 64px;
+  background: var(--gold);
+  opacity: 0.4;
+}
+.section-label--light { color: var(--gold); }
+.section-label--light::after { background: var(--gold); opacity: 0.25; }
+
+/* ════════════════════════════════════════════════════════════
+   NAVIGATION
+   ════════════════════════════════════════════════════════════ */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(250, 248, 244, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 5vw, 72px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+.nav-wordmark {
+  font-family: var(--display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+.nav-links { display: flex; gap: 28px; align-items: center; }
+.nav-links a {
+  font-family: var(--body);
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--graphite);
+  transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--gold-muted); }
+.nav-links a.active { color: var(--navy); }
+.nav-cta-btn {
+  font-family: var(--mono) !important;
+  font-size: 0.68rem !important;
+  letter-spacing: 0.12em !important;
+  padding: 10px 26px !important;
+  border: 1.5px solid var(--navy) !important;
+  color: var(--navy) !important;
+  transition: all 0.35s !important;
+}
+.nav-cta-btn:hover {
+  background: var(--navy) !important;
+  color: var(--ivory) !important;
+}
+
+/* ════════════════════════════════════════════════════════════
+   PAGE HERO
+   ════════════════════════════════════════════════════════════ */
+.page-hero {
+  padding-top: 148px;
+  padding-bottom: 80px;
+  border-bottom: 1px solid var(--rule);
+}
+.page-hero-descriptor {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 36px;
+}
+.page-hero h1 {
+  font-family: var(--display);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  color: var(--navy);
+  max-width: 760px;
+  margin-bottom: 32px;
+}
+.page-hero h1 em { font-style: italic; color: var(--gold-muted); }
+.page-hero-sub {
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--graphite);
+  max-width: 620px;
+}
+
+/* ════════════════════════════════════════════════════════════
+   FLAGSHIP SERVICE
+   ════════════════════════════════════════════════════════════ */
+.flagship {
+  padding: 96px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.flagship-card {
+  border: 1.5px solid var(--gold);
+  background: var(--ivory);
+  position: relative;
+}
+.flagship-card::before {
+  content: 'FLAGSHIP SERVICE';
+  position: absolute;
+  top: -1px; right: 56px;
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--ivory);
+  background: var(--gold);
+  padding: 6px 18px;
+}
+.flagship-top {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 0;
+}
+.flagship-top-left {
+  padding: 56px 52px;
+  border-right: 1px solid var(--rule);
+}
+.flagship-top-right {
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+}
+.flagship-num {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--stone);
+  margin-bottom: 18px;
+}
+.flagship-title {
+  font-family: var(--display);
+  font-size: clamp(1.6rem, 2.5vw, 2rem);
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 10px;
+  line-height: 1.25;
+}
+.flagship-subtitle {
+  font-family: var(--display);
+  font-size: 1rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--gold-muted);
+  margin-bottom: 24px;
+}
+.flagship-desc {
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.82;
+  color: var(--graphite);
+  margin-bottom: 8px;
+}
+.flagship-desc:last-of-type { margin-bottom: 0; }
+
+/* Deliverables */
+.flagship-deliverables-label {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 20px;
+}
+.flagship-deliverables {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+.flagship-del {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--charcoal);
+}
+.flagship-del::before {
+  content: '';
+  width: 4px; height: 4px;
+  background: var(--gold);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.flagship-for {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 1px solid var(--rule);
+}
+.flagship-for span { color: var(--charcoal); font-weight: 500; }
+
+/* Evaluation areas */
+.flagship-areas {
+  border-top: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+.eval-area {
+  padding: 40px 36px;
+  border-right: 1px solid var(--rule);
+}
+.eval-area:last-child { border-right: none; }
+.eval-area-icon {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--rule);
+}
+.eval-area h4 {
+  font-family: var(--display);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+.eval-area p {
+  font-size: 0.78rem;
+  font-weight: 300;
+  line-height: 1.72;
+  color: var(--graphite);
+}
+
+/* Use cases */
+.flagship-usecases {
+  border-top: 1px solid var(--rule);
+  padding: 44px 52px;
+}
+.flagship-usecases-label {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 24px;
+}
+.usecase-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+.usecase h5 {
+  font-family: var(--body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.usecase p {
+  font-size: 0.76rem;
+  font-weight: 300;
+  line-height: 1.68;
+  color: var(--graphite);
+}
+
+/* ════════════════════════════════════════════════════════════
+   SECONDARY SERVICES
+   ════════════════════════════════════════════════════════════ */
+.secondary-services {
+  padding: 96px 0;
+  background: var(--ivory-warm);
+}
+.secondary-header {
+  margin-bottom: 56px;
+  max-width: 600px;
+}
+.secondary-header h2 {
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+.secondary-header h2 em { font-style: italic; color: var(--gold-muted); }
+.secondary-header p {
+  font-size: 0.92rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--graphite);
+}
+
+.svc-full {
+  border: 1px solid var(--rule);
+  background: var(--ivory);
+  margin-bottom: 24px;
+}
+.svc-full:last-child { margin-bottom: 0; }
+.svc-full-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+.svc-full-left {
+  padding: 48px;
+  border-right: 1px solid var(--rule);
+}
+.svc-full-right {
+  padding: 48px;
+}
+.svc-num {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--stone);
+  margin-bottom: 16px;
+}
+.svc-title {
+  font-family: var(--display);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.svc-subtitle {
+  font-family: var(--display);
+  font-size: 0.92rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--gold-muted);
+  margin-bottom: 20px;
+}
+.svc-desc {
+  font-size: 0.86rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--graphite);
+  margin-bottom: 14px;
+}
+.svc-desc:last-of-type { margin-bottom: 0; }
+.svc-del-label {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 16px;
+}
+.svc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+.svc-tag {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.04em;
+  padding: 5px 14px;
+  background: var(--gold-pale);
+  color: var(--charcoal);
+  border: 1px solid rgba(194, 162, 78, 0.15);
+}
+.svc-for {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--stone);
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+}
+.svc-for span { color: var(--charcoal); font-weight: 500; }
+
+/* ════════════════════════════════════════════════════════════
+   METHODOLOGY
+   ════════════════════════════════════════════════════════════ */
+.methodology {
+  padding: 96px 0;
+  background: var(--navy);
+  color: var(--ivory);
+}
+.method-header {
+  margin-bottom: 56px;
+  max-width: 600px;
+}
+.method-header h2 {
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--ivory);
+  margin-bottom: 20px;
+}
+.method-header h2 em { font-style: italic; color: var(--gold); }
+.method-header p {
+  font-size: 0.92rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(250, 248, 244, 0.5);
+}
+.method-steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background: var(--rule-light);
+  border: 1px solid var(--rule-light);
+}
+.method-step {
+  background: var(--navy);
+  padding: 44px 30px;
+}
+.method-step-num {
+  font-family: var(--display);
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: rgba(194, 162, 78, 0.25);
+  margin-bottom: 20px;
+}
+.method-step h3 {
+  font-family: var(--body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ivory);
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+.method-step p {
+  font-size: 0.78rem;
+  font-weight: 300;
+  line-height: 1.72;
+  color: rgba(250, 248, 244, 0.45);
+}
+.method-note {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid var(--rule-light);
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(250, 248, 244, 0.4);
+  max-width: 800px;
+}
+.method-note strong {
+  color: rgba(250, 248, 244, 0.65);
+  font-weight: 500;
+}
+
+/* ════════════════════════════════════════════════════════════
+   SUBSIDIARY / ENTRY POINT
+   ════════════════════════════════════════════════════════════ */
+.entry-service {
+  padding: 72px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.entry-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.entry-card h3 {
+  font-family: var(--display);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.entry-card .svc-subtitle { margin-bottom: 16px; }
+.entry-card p {
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--graphite);
+}
+.entry-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* ════════════════════════════════════════════════════════════
+   CTA
+   ════════════════════════════════════════════════════════════ */
+.cta {
+  padding: 96px 0;
+  background: var(--navy);
+  position: relative;
+}
+.cta::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--gold);
+}
+.cta-inner {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.cta-overline {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 28px;
+}
+.cta-inner h2 {
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--ivory);
+  margin-bottom: 24px;
+}
+.cta-inner h2 em { font-style: italic; color: var(--gold); }
+.cta-inner > p {
+  font-size: 0.92rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(250, 248, 244, 0.5);
+  margin-bottom: 40px;
+}
+.cta-btns {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 18px 40px;
+  background: var(--gold);
+  color: var(--navy);
+  border: 1.5px solid var(--gold);
+  cursor: pointer;
+  transition: all 0.35s;
+}
+.cta-btn:hover {
+  background: transparent;
+  color: var(--gold);
+}
+.cta-btn-secondary {
+  background: transparent;
+  color: rgba(250, 248, 244, 0.6);
+  border-color: rgba(250, 248, 244, 0.2);
+}
+.cta-btn-secondary:hover {
+  color: var(--ivory);
+  border-color: var(--ivory);
+  background: transparent;
+}
+.cta-contact {
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 1px solid var(--rule-light);
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+.cta-contact-item {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  color: rgba(250, 248, 244, 0.35);
+}
+.cta-contact-item a {
+  color: rgba(250, 248, 244, 0.55);
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s;
+}
+.cta-contact-item a:hover {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+/* ════════════════════════════════════════════════════════════
+   FOOTER
+   ════════════════════════════════════════════════════════════ */
+footer {
+  padding: 40px 0;
+  background: var(--ivory);
+  border-top: 1px solid var(--rule);
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-brand {
+  font-family: var(--display);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.footer-right a {
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--stone);
+  transition: color 0.3s;
+}
+.footer-right a:hover { color: var(--gold-muted); }
+.footer-copy {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  color: var(--stone);
+}
+.footer-tagline {
+  text-align: center;
+  padding: 20px 0 0;
+  margin-top: 20px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--display);
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--gold-muted);
+}
+
+/* ════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════════════════════ */
+@media (max-width: 960px) {
+  .flagship-top { grid-template-columns: 1fr; }
+  .flagship-top-left { border-right: none; border-bottom: 1px solid var(--rule); }
+  .flagship-areas { grid-template-columns: repeat(2, 1fr); }
+  .eval-area { border-right: none; border-bottom: 1px solid var(--rule); }
+  .eval-area:last-child { border-bottom: none; }
+  .usecase-grid { grid-template-columns: repeat(2, 1fr); }
+  .svc-full-top { grid-template-columns: 1fr; }
+  .svc-full-left { border-right: none; border-bottom: 1px solid var(--rule); }
+  .method-steps { grid-template-columns: repeat(2, 1fr); }
+  .entry-card { grid-template-columns: 1fr; gap: 32px; }
+  .cta-contact { flex-direction: column; gap: 10px; }
+  .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
+  .footer-right { flex-direction: column; gap: 12px; }
+}
+@media (max-width: 600px) {
+  .nav-links a:not(.nav-cta-btn) { display: none; }
+  .page-hero h1 { font-size: 2rem; }
+  .flagship-areas { grid-template-columns: 1fr; }
+  .usecase-grid { grid-template-columns: 1fr; }
+  .flagship-deliverables { grid-template-columns: 1fr; }
+  .method-steps { grid-template-columns: 1fr; }
+  .flagship-top-left, .flagship-top-right { padding: 36px 28px; }
+  .flagship-usecases { padding: 36px 28px; }
+  .svc-full-left, .svc-full-right { padding: 36px 28px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════════ NAV ════════ -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-wordmark">Chan García</a>
+    <div class="nav-links">
+      <a href="services.html" class="active">Services</a>
+      <a href="about.html">About</a>
+      <a href="evidence.html">Evidence</a>
+      <a href="exposure-report.html">The Exposure Report</a>
+      <a href="contact.html" class="nav-cta-btn">Engage</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════ PAGE HERO ════════ -->
+<section class="page-hero">
+  <div class="container">
+    <p class="page-hero-descriptor anim d1">Service architecture</p>
+    <h1 class="anim d2">Independent Evaluations and <em>Financial Quantification</em> of Risk</h1>
+    <p class="page-hero-sub anim d3">Every engagement converts governance, regulatory, and compliance risk in Mexico into a financially quantified exposure range — built for the people who allocate capital and make decisions, not the people who file documents.</p>
+  </div>
+</section>
+
+<!-- ════════ FLAGSHIP SERVICE ════════ -->
+<section class="flagship">
+  <div class="container">
+    <div class="section-label">01 — Flagship service</div>
+    <div class="flagship-card">
+      <div class="flagship-top">
+        <div class="flagship-top-left">
+          <div class="flagship-num">01</div>
+          <div class="flagship-title">Independent Exposure Assessment & Financial Quantification</div>
+          <div class="flagship-subtitle">What does your Mexico risk actually cost?</div>
+          <p class="flagship-desc">A structured, independent evaluation of your governance, compliance, legal, and regulatory position in Mexico — with all findings converted into a financially quantified exposure range through professional actuarial methodology.</p>
+          <p class="flagship-desc">Unlike a traditional legal review that produces narrative findings, this assessment translates every identified risk into measurable financial terms. The output is designed for CFOs, investment committees, and boards who need to understand what governance risk costs before committing capital — not a legal memo, but a decision-grade financial instrument.</p>
+          <p class="flagship-desc">The assessment is external and independent. We do not audit internally, nor do we sell implementation. This structural separation ensures our conclusions are conflict-free and defensible before third parties, regulators, and institutional stakeholders.</p>
+        </div>
+        <div class="flagship-top-right">
+          <div class="flagship-deliverables-label">Deliverables</div>
+          <div class="flagship-deliverables">
+            <div class="flagship-del">Governance risk score</div>
+            <div class="flagship-del">Exposure heatmap</div>
+            <div class="flagship-del">Probability-weighted scenarios</div>
+            <div class="flagship-del">Red flag register</div>
+            <div class="flagship-del">Risk and control matrix</div>
+            <div class="flagship-del">Financial exposure range</div>
+            <div class="flagship-del">Executive committee report</div>
+            <div class="flagship-del">Prioritized action plan</div>
+          </div>
+          <div class="flagship-for">For <span>PE firms · Private credit · Investment committees · CFOs · Boards · Operating companies</span></div>
+        </div>
+      </div>
+
+      <!-- Evaluation Areas -->
+      <div class="flagship-areas">
+        <div class="eval-area">
+          <div class="eval-area-icon">Area A</div>
+          <h4>Compliance Normativo</h4>
+          <p>We evaluate the effectiveness of compliance programs against applicable laws, regulations, and internal policies — including fiscal and accounting compliance, anti-corruption, anti-money laundering, data protection, labor policies, and fraud prevention.</p>
+        </div>
+        <div class="eval-area">
+          <div class="eval-area-icon">Area B</div>
+          <h4>Corporate Governance</h4>
+          <p>We analyze the governance structure: distribution of rights and responsibilities between the board, management, and shareholders. We evaluate decision-making protocols, committee effectiveness, oversight mechanisms, and succession planning against OECD and CCE standards.</p>
+        </div>
+        <div class="eval-area">
+          <div class="eval-area-icon">Area C</div>
+          <h4>Contracts & Legal Exposure</h4>
+          <p>We review the contractual framework to detect exposure levels, risk concentrations, and structural vulnerabilities — including supplier agreements, intercompany arrangements, and third-party obligations that create quantifiable financial exposure.</p>
+        </div>
+        <div class="eval-area">
+          <div class="eval-area-icon">Area D</div>
+          <h4>Financial Quantification</h4>
+          <p>All legal, governance, and compliance findings are translated into financial terms using professional actuarial methodology. Scenario modeling produces probability-weighted exposure ranges — converting abstract legal concepts into actionable financial metrics.</p>
+        </div>
+      </div>
+
+      <!-- Use Cases -->
+      <div class="flagship-usecases">
+        <div class="flagship-usecases-label">When this assessment is used</div>
+        <div class="usecase-grid">
+          <div class="usecase">
+            <h5>Pre-Investment Due Diligence</h5>
+            <p>PE funds and investment committees require an independent, financially quantified governance opinion before committing capital to a Mexico deal.</p>
+          </div>
+          <div class="usecase">
+            <h5>Demonstrating Stakeholder Trust</h5>
+            <p>Companies seeking to demonstrate to investors, regulators, or partners that their operations meet governance and compliance standards — including for financing access.</p>
+          </div>
+          <div class="usecase">
+            <h5>Certification Preparation</h5>
+            <p>Organizations preparing for PRIME Certification or other governance certifications use an independent evaluation to identify gaps and strengthen their position before formal review.</p>
+          </div>
+          <div class="usecase">
+            <h5>Supplier & Third-Party Validation</h5>
+            <p>Companies that work with critical third parties and need to verify that their supply chains meet governance and compliance standards with quantified risk exposure.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ SECONDARY SERVICES ════════ -->
+<section class="secondary-services">
+  <div class="container">
+    <div class="section-label">Additional services</div>
+    <div class="secondary-header">
+      <h2>Ongoing oversight, entry review, and <em>rapid assessment</em></h2>
+      <p>Beyond the flagship assessment, Chan García provides specialized services for recurring governance oversight, market entry evaluation, and investment committee timelines.</p>
+    </div>
+
+    <!-- Service 02: IC Risk Opinion -->
+    <div class="svc-full">
+      <div class="svc-full-top">
+        <div class="svc-full-left">
+          <div class="svc-num">02</div>
+          <div class="svc-title">Investment Committee Risk Opinion</div>
+          <div class="svc-subtitle">Rapid assessment for deal timelines.</div>
+          <p class="svc-desc">A focused, accelerated assessment designed to meet investment committee timelines. Used during acquisitions, due diligence windows, and deal evaluation when both speed and precision matter.</p>
+          <p class="svc-desc">The output is a concise, committee-ready opinion on governance and regulatory exposure — with financially quantified risk ranges that can be incorporated directly into deal models, negotiation positions, and committee presentations.</p>
+        </div>
+        <div class="svc-full-right">
+          <div class="svc-del-label">Deliverables</div>
+          <div class="svc-tags">
+            <span class="svc-tag">Governance risk opinion</span>
+            <span class="svc-tag">Exposure range</span>
+            <span class="svc-tag">Red flag summary</span>
+            <span class="svc-tag">Committee-ready memo</span>
+          </div>
+          <div class="svc-for">For <span>PE firms · Private credit · M&A advisors · Investment committees</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service 03: Governance Monitoring -->
+    <div class="svc-full">
+      <div class="svc-full-top">
+        <div class="svc-full-left">
+          <div class="svc-num">03</div>
+          <div class="svc-title">Governance Risk Monitoring</div>
+          <div class="svc-subtitle">Risk doesn't stay static. Your oversight shouldn't either.</div>
+          <p class="svc-desc">A recurring monitoring service that tracks changes in your governance and regulatory exposure over time. We reassess quarterly or semiannually, flag deterioration before it becomes a financial event, and provide score-migration reporting for boards and audit committees.</p>
+          <p class="svc-desc">Programs of compliance and governance must be reviewed and improved continuously. This service provides the independent, ongoing verification that institutional stakeholders require — not a one-time snapshot, but a living assessment of evolving risk.</p>
+        </div>
+        <div class="svc-full-right">
+          <div class="svc-del-label">Deliverables</div>
+          <div class="svc-tags">
+            <span class="svc-tag">Quarterly reassessments</span>
+            <span class="svc-tag">Score migration reports</span>
+            <span class="svc-tag">Early warning triggers</span>
+            <span class="svc-tag">Board-level reporting</span>
+            <span class="svc-tag">Audit committee ready</span>
+          </div>
+          <div class="svc-for">For <span>Portfolio companies · Subsidiaries · Boards · Audit committees</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service 04: Mexico Entry -->
+    <div class="svc-full">
+      <div class="svc-full-top">
+        <div class="svc-full-left">
+          <div class="svc-num">04</div>
+          <div class="svc-title">Mexico Entry Exposure Review</div>
+          <div class="svc-subtitle">Know your exposure before you commit capital.</div>
+          <p class="svc-desc">For U.S. and international companies preparing to enter Mexico — through a subsidiary, acquisition, supplier relationship, or nearshoring operation. We map the regulatory, governance, and legal exposure specific to your entry structure before you sign.</p>
+          <p class="svc-desc">Companies initiating operations in Mexico face a regulatory environment that is jurisdiction-specific, politically sensitive, and structurally different from other markets. This review ensures your board and CFO have a financially framed understanding of the compliance landscape before committing resources.</p>
+        </div>
+        <div class="svc-full-right">
+          <div class="svc-del-label">Deliverables</div>
+          <div class="svc-tags">
+            <span class="svc-tag">Regulatory compliance scan</span>
+            <span class="svc-tag">Third-party risk mapping</span>
+            <span class="svc-tag">Contract exposure review</span>
+            <span class="svc-tag">Governance structure assessment</span>
+            <span class="svc-tag">Financial exposure summary</span>
+          </div>
+          <div class="svc-for">For <span>U.S. companies · Multinationals · Nearshoring operations</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════ SOFTLANDING & CORPORATE SETUP ════════ -->
+<section class="entry-service">
+  <div class="container">
+    <div class="entry-card">
+      <div>
+        <div class="svc-num">05 — Supporting service</div>
+        <h3>Mexico Softlanding & Corporate Setup</h3>
+        <div class="svc-subtitle">Entering Mexico? We handle the legal and operational groundwork so you can focus on business.</div>
+        <p>A full-service corporate softlanding for companies establishing legal presence in Mexico. We manage entity formation, tax registration, regulatory setup, and the document infrastructure required to operate — including contract review, apostille coordination, and connecting you with vetted local professionals. This service is designed as an entry point: companies that begin with softlanding frequently engage Chan García for ongoing governance monitoring and independent assessment as their Mexico operations mature.</p>
+      </div>
+      <div>
+        <div class="svc-del-label">Scope includes</div>
+        <div class="entry-tags">
+          <span class="svc-tag">Legal entity formation & registration</span>
+          <span class="svc-tag">Corporate structuring</span>
+          <span class="svc-tag">SAT tax ID setup & registration guidance</span>
+          <span class="svc-tag">SAT appointment coordination</span>
+          <span class="svc-tag">Contract review & revision</span>
+          <span class="svc-tag">Document preparation & review</span>
+          <span class="svc-tag">U.S., Mexico & Canada apostilles</span>
+          <span class="svc-tag">Certified translations</span>
+          <span class="svc-tag">Vetted notary coordination</span>
+          <span class="svc-tag">Fiscal representative setup</span>
+          <span class="svc-tag">Initial governance architecture</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ METHODOLOGY ════════ -->
+<section class="methodology">
+  <div class="container">
+    <div class="section-label section-label--light">Methodology</div>
+    <div class="method-header">
+      <h2>From risk identification to <em>financial quantification</em></h2>
+      <p>Every assessment follows the same five-phase methodology — producing comparable, auditable outputs that institutional committees can reference and defend.</p>
+    </div>
+    <div class="method-steps">
+      <div class="method-step">
+        <div class="method-step-num">01</div>
+        <h3>Scope & Framework Definition</h3>
+        <p>Define the assessment scope, identify applicable regulatory frameworks, and select reference standards appropriate to the entity's sector, jurisdiction, and corporate structure in Mexico.</p>
+      </div>
+      <div class="method-step">
+        <div class="method-step-num">02</div>
+        <h3>Document Review & Interviews</h3>
+        <p>Gather evidence through analysis of governance documents, compliance policies, organizational structures, codes of ethics, and contractual frameworks. Conduct structured interviews with directors, board members, and key function owners.</p>
+      </div>
+      <div class="method-step">
+        <div class="method-step-num">03</div>
+        <h3>Control Testing</h3>
+        <p>Verify the operational effectiveness of internal controls through design and operational testing — including segregation of duties, data protection measures, and compliance enforcement mechanisms.</p>
+      </div>
+      <div class="method-step">
+        <div class="method-step-num">04</div>
+        <h3>Actuarial Financial Quantification</h3>
+        <p>Translate all legal, governance, and compliance findings into financial terms using professional actuarial methodology. Run scenario models with multiple methodologies to produce probability-weighted exposure ranges.</p>
+      </div>
+      <div class="method-step">
+        <div class="method-step-num">05</div>
+        <h3>Defensible Report & Briefing</h3>
+        <p>Deliver an executive-grade report with findings, governance scores, exposure heatmaps, quantified financial ranges, and a prioritized action plan — supported by recognized legal and governance reference frameworks.</p>
+      </div>
+    </div>
+    <div class="method-note">
+      <strong>Standards and frameworks:</strong> Our methodology is grounded in international compliance standards, OECD governance principles, Mexico's CCE Code of Best Practices for Corporate Governance, and sector-specific regulatory requirements. Assessments are calibrated to the applicable legal framework for each jurisdiction, sector, and corporate structure — ensuring outputs are defensible, comparable, and recognized by institutional stakeholders.
+    </div>
+  </div>
+</section>
+
+<!-- ════════ CTA ════════ -->
+<section class="cta">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="cta-overline">Ready to know your real exposure?</div>
+      <h2>Start with a <em>Conversation.</em></h2>
+      <p>A 30-minute call with a Chan García partner is the fastest way to understand whether an independent assessment is right for your situation. We'll ask for basic context about your company to prepare the session and maximize its value.</p>
+      <div class="cta-btns">
+        <a href="/cdn-cgi/l/email-protection#375458594356544377545f5659505645545e561954585a" class="cta-btn">Request an Assessment</a>
+        <a href="/cdn-cgi/l/email-protection#294a46475d484a5d694a4148474e485b4a4048074a4644" class="cta-btn cta-btn-secondary">Schedule a Partner Call</a>
+      </div>
+      <div class="cta-contact">
+        <div class="cta-contact-item">Mexico City, Mexico</div>
+        <div class="cta-contact-item"><a href="/cdn-cgi/l/email-protection#3b5854554f5a584f7b58535a555c5a4958525a15585456"><span class="__cf_email__" data-cfemail="bdded2d3c9dcdec9fdded5dcd3dadccfded4dc93ded2d0">[email&#160;protected]</span></a></div>
+        <div class="cta-contact-item"><a href="https://changarcia.com">changarcia.com</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">Chan García</div>
+      <div class="footer-right">
+        <a href="Cha
+<footer style="padding:40px 0;background:#faf8f4;border-top:1px solid rgba(12,26,42,0.1);">
+  <div style="max-width:1180px;margin:0 auto;padding:0 clamp(24px,5vw,72px);display:flex;justify-content:space-between;align-items:center;">
+    <div style="font-family:'Playfair Display',Georgia,serif;font-size:1rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#0c1a2a;">Chan García</div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:0.6rem;color:#8a8884;">© 2026 Chan García</div>
+  </div>
+  <div style="text-align:center;padding:20px 0 0;margin-top:20px;border-top:1px solid rgba(12,26,42,0.1);font-family:'Playfair Display',Georgia,serif;font-size:0.88rem;font-style:italic;color:#b89a47;">We Make Governance Measurable.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chan García — Brand Identity System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Archivo:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400;500&family=Source+Serif+4:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* ─── NEW CHAN GARCÍA PALETTE ─── */
+  --white: #ffffff;
+  --snow: #f8f8f7;
+  --pearl: #f0efec;
+  --fog: #e5e3de;
+  --ash: #c4c1ba;
+  --slate: #7a7670;
+  --carbon: #4a4640;
+  --ink: #1e1c19;
+
+  --accent: #9a6b42;         /* Copper — primary accent, signature color */
+  --accent-light: #b8834e;
+  --accent-pale: rgba(154, 107, 66, 0.08);
+  --accent-text: #845a36;
+
+  --red-exposure: #8b3a3a;
+  --green-outcome: #4a7a5c;
+
+  --rule: rgba(30, 28, 25, 0.08);
+  --rule-dark: rgba(255, 255, 255, 0.08);
+
+  --display: 'Source Serif 4', Georgia, serif;
+  --body: 'Archivo', -apple-system, Helvetica, sans-serif;
+  --mono: 'JetBrains Mono', 'SF Mono', monospace;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+  font-family: var(--body);
+  background: var(--snow);
+  color: var(--carbon);
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: var(--accent); color: var(--white); }
+
+.page { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+
+/* ─── Cover ─── */
+.cover {
+  padding: 120px 0 80px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 80px;
+}
+.cover-label {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 32px;
+}
+.cover h1 {
+  font-family: var(--display);
+  font-size: 3.6rem;
+  font-weight: 400;
+  line-height: 1.08;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+.cover h1 em { font-style: italic; color: var(--accent); }
+.cover-sub {
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--slate);
+  max-width: 560px;
+  margin-bottom: 40px;
+}
+.cover-meta {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  color: var(--ash);
+}
+
+/* ─── Section ─── */
+.section { margin-bottom: 96px; }
+.section-num {
+  font-family: var(--mono);
+  font-size: 0.56rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.section h2 {
+  font-family: var(--display);
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+.section h2 em { font-style: italic; color: var(--accent); }
+.section-intro {
+  font-size: 0.92rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--slate);
+  max-width: 600px;
+  margin-bottom: 48px;
+}
+.section h3 {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 12px;
+  margin-top: 40px;
+  letter-spacing: 0.02em;
+}
+.section p {
+  font-size: 0.86rem;
+  font-weight: 300;
+  line-height: 1.78;
+  color: var(--slate);
+  max-width: 640px;
+  margin-bottom: 16px;
+}
+.rule {
+  height: 1px;
+  background: var(--rule);
+  margin: 48px 0;
+}
+
+/* ─── Diagnosis ─── */
+.diagnosis-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+.diag-card {
+  border: 1px solid var(--rule);
+  padding: 36px;
+  background: var(--white);
+}
+.diag-card-label {
+  font-family: var(--mono);
+  font-size: 0.53rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--rule);
+}
+.diag-bad { color: var(--red-exposure); }
+.diag-good { color: var(--green-outcome); }
+.diag-card ul { list-style: none; padding: 0; }
+.diag-card li {
+  font-size: 0.8rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--slate);
+  padding: 6px 0 6px 18px;
+  position: relative;
+}
+.diag-card li::before {
+  content: '';
+  position: absolute; left: 0; top: 13px;
+  width: 5px; height: 5px; border-radius: 50%;
+}
+.diag-bad li::before { background: var(--red-exposure); }
+.diag-good li::before { background: var(--green-outcome); }
+
+/* ─── Color Palette ─── */
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 32px;
+}
+.palette-card {
+  border: 1px solid var(--rule);
+  overflow: hidden;
+}
+.palette-swatch {
+  height: 120px;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+}
+.palette-swatch-name {
+  font-family: var(--mono);
+  font-size: 0.56rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.palette-info {
+  padding: 16px;
+  background: var(--white);
+}
+.palette-hex {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.palette-use {
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: var(--slate);
+  line-height: 1.5;
+}
+
+.palette-secondary {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.palette-mini {
+  border: 1px solid var(--rule);
+  overflow: hidden;
+}
+.palette-mini-swatch { height: 56px; }
+.palette-mini-info { padding: 10px 12px; background: var(--white); }
+.palette-mini-hex {
+  font-family: var(--mono);
+  font-size: 0.53rem;
+  color: var(--ink);
+}
+.palette-mini-name {
+  font-size: 0.53rem;
+  color: var(--ash);
+  margin-top: 2px;
+}
+
+/* ─── Typography ─── */
+.type-specimen {
+  border: 1px solid var(--rule);
+  padding: 48px;
+  background: var(--white);
+  margin-bottom: 24px;
+}
+.type-specimen-label {
+  font-family: var(--mono);
+  font-size: 0.53rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+.type-specimen-sample { margin-bottom: 20px; line-height: 1.2; }
+.type-specimen-meta {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  color: var(--ash);
+  line-height: 1.6;
+}
+
+/* ─── Logo ─── */
+.logo-display {
+  border: 1px solid var(--rule);
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+.logo-display-dark {
+  padding: 64px 48px;
+  background: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-display-light {
+  padding: 64px 48px;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-display-gray {
+  padding: 64px 48px;
+  background: var(--pearl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-display-label {
+  padding: 14px 20px;
+  background: var(--pearl);
+  font-family: var(--mono);
+  font-size: 0.53rem;
+  letter-spacing: 0.1em;
+  color: var(--ash);
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ─── Do / Don't ─── */
+.dodont-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.dodont-card {
+  border: 1px solid var(--rule);
+  background: var(--white);
+  padding: 32px;
+}
+.dodont-label {
+  font-family: var(--mono);
+  font-size: 0.53rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--rule);
+}
+.do-label { color: var(--green-outcome); }
+.dont-label { color: var(--red-exposure); }
+.dodont-card p {
+  font-size: 0.78rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--slate);
+  margin-bottom: 8px;
+  max-width: 100%;
+}
+
+/* ─── Visual direction ─── */
+.visual-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 32px;
+}
+.visual-card {
+  border: 1px solid var(--rule);
+  overflow: hidden;
+}
+.visual-swatch {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.visual-swatch-label {
+  font-family: var(--mono);
+  font-size: 0.48rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.6;
+}
+.visual-info { padding: 16px; background: var(--white); }
+.visual-title {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.visual-desc {
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: var(--ash);
+  line-height: 1.5;
+}
+
+/* ─── Comparison ─── */
+.comp-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.comp-card {
+  border: 1px solid var(--rule);
+  overflow: hidden;
+}
+.comp-card-swatch {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.comp-card-swatch span {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.comp-card-info {
+  padding: 16px;
+  background: var(--white);
+}
+.comp-card-info p {
+  font-size: 0.75rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--slate);
+  max-width: 100%;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .page { padding: 0 24px; }
+  .cover h1 { font-size: 2.4rem; }
+  .diagnosis-grid, .palette-grid, .dodont-grid, .visual-grid, .comp-row { grid-template-columns: 1fr; }
+  .palette-secondary { grid-template-columns: repeat(3, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+<!-- ════════ COVER ════════ -->
+<div class="cover">
+  <p class="cover-label">Brand Identity System</p>
+  <h1>Chan <em>García</em></h1>
+  <p class="cover-sub">Visual identity guidelines for Chan García — independent regulatory risk and financial exposure advisory. This document defines the brand's color system, typography, logo usage, and visual direction.</p>
+  <p class="cover-meta">Version 1.0 · March 2026</p>
+</div>
+
+<!-- ════════ 01 — EVOLUTION ════════ -->
+<div class="section">
+  <p class="section-num">01 — Brand evolution</p>
+  <h2>From legal practice to <em>financial intelligence</em></h2>
+  <p class="section-intro">The visual identity reflects the firm's evolution — from a traditional legal practice to an independent regulatory risk and financial exposure advisory serving institutional decision-makers.</p>
+
+  <div class="diagnosis-grid">
+    <div class="diag-card">
+      <div class="diag-card-label diag-bad">Previous identity — what to retire</div>
+      <ul>
+        <li>Heavy ornate serif that reads as traditional law firm</li>
+        <li>Metallic emboss treatment — does not translate to digital</li>
+        <li>"Abogados" as the primary descriptor anchors the brand in legal services</li>
+        <li>Decorative double-rule border frame</li>
+        <li>No scalable color system for web, print, and presentations</li>
+        <li>No connection to the institutional audience (PE, CFOs, investment committees)</li>
+      </ul>
+    </div>
+    <div class="diag-card">
+      <div class="diag-card-label diag-good">New identity — defining elements</div>
+      <ul>
+        <li>Clean serif with restrained weight signals precision</li>
+        <li>Copper horizontal rule as a signature brand element</li>
+        <li>"Regulatory Risk & Financial Exposure Advisors · Mexico" repositions the firm</li>
+        <li>Light, open palette with warm gray base — minimal contrast, maximum clarity</li>
+        <li>Typography-driven, no decorative elements</li>
+        <li>Single accent color (copper) creates a focused, confident visual identity</li>
+        <li>Reads as financial intelligence, not legal services</li>
+      </ul>
+    </div>
+  </div>
+
+  <p>The updated identity is built on the principle that the visual brand should make institutional buyers — PE partners, CFOs, investment committee members — feel that this firm understands their world before they read a single word of copy.</p>
+</div>
+
+<!-- ════════ 02 — COLOR PALETTE ════════ -->
+<div class="section">
+  <p class="section-num">02 — Color palette</p>
+  <h2>White, warm gray, and <em>copper</em></h2>
+  <p class="section-intro">The palette is built on a light, clean foundation — white and warm grays that feel open, precise, and uncluttered. Copper is the sole accent color: warm, grounded, and distinctive. It functions as both the signature brand mark and the functional accent across all applications. This palette is calm, analytical, and distinctly not a law firm.</p>
+
+  <h3>Foundation Colors</h3>
+  <div class="palette-grid">
+    <div class="palette-card">
+      <div class="palette-swatch" style="background: #ffffff; border-bottom: 1px solid rgba(0,0,0,0.06);">
+        <span class="palette-swatch-name" style="color: var(--ash);">White</span>
+      </div>
+      <div class="palette-info">
+        <div class="palette-hex">#FFFFFF</div>
+        <div class="palette-use">Primary background. Cards, content areas, form fields. Clean and open — the brand breathes through white space.</div>
+      </div>
+    </div>
+    <div class="palette-card">
+      <div class="palette-swatch" style="background: #f8f8f7;">
+        <span class="palette-swatch-name" style="color: var(--ash);">Snow</span>
+      </div>
+      <div class="palette-info">
+        <div class="palette-hex">#F8F8F7</div>
+        <div class="palette-use">Page background. Barely off-white — prevents the clinical feel of pure white while maintaining lightness. The default canvas.</div>
+      </div>
+    </div>
+    <div class="palette-card">
+      <div class="palette-swatch" style="background: #1e1c19;">
+        <span class="palette-swatch-name" style="color: rgba(255,255,255,0.5);">Ink</span>
+      </div>
+      <div class="palette-info">
+        <div class="palette-hex">#1E1C19</div>
+        <div class="palette-use">Primary text, headlines, dark sections. Warm black — softer than pure black, with a slight brown undertone that connects to the warm gray system.</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Accent Color</h3>
+  <div class="palette-grid">
+    <div class="palette-card">
+      <div class="palette-swatch" style="background: #9a6b42;">
+        <span class="palette-swatch-name" style="color: rgba(255,255,255,0.8);">Copper</span>
+      </div>
+      <div class="palette-info">
+        <div class="palette-hex">#9A6B42</div>
+        <div class="palette-use">The only accent color. Logo rule, section labels, CTAs, active states, data highlights, monospaced labels. Warmer than gold, more grounded. Reads as craftsmanship and permanence — the material of precision instruments.</div>
+      </div>
+    </div>
+    <div class="palette-card">
+      <div class="palette-swatch" style="background: #b8834e;">
+        <span class="palette-swatch-name" style="color: rgba(255,255,255,0.7);">Copper Light</span>
+      </div>
+      <div class="palette-info">
+        <div class="palette-hex">#B8834E</div>
+        <div class="palette-use">Hover states, lighter accent applications. Used when copper needs to appear on dark backgrounds or when a lighter variant improves readability.</div>
+      </div>
+    </div>
+    <div class="palette-card">
+      <div class="palette-swatch" style="background: #e5e3de;">
+        <span class="palette-swatch-name" style="color: var(--slate);">Fog</span>
+      </div>
+      <div class="palette-info">
+        <div class="palette-hex">#E5E3DE</div>
+        <div class="palette-use">Dividers, borders, card separators, subtle backgrounds. The structural color — creates hierarchy without competing with content.</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Supporting Tones</h3>
+  <div class="palette-secondary">
+    <div class="palette-mini">
+      <div class="palette-mini-swatch" style="background: #f0efec;"></div>
+      <div class="palette-mini-info">
+        <div class="palette-mini-hex">#F0EFEC</div>
+        <div class="palette-mini-name">Pearl</div>
+      </div>
+    </div>
+    <div class="palette-mini">
+      <div class="palette-mini-swatch" style="background: #c4c1ba;"></div>
+      <div class="palette-mini-info">
+        <div class="palette-mini-hex">#C4C1BA</div>
+        <div class="palette-mini-name">Ash</div>
+      </div>
+    </div>
+    <div class="palette-mini">
+      <div class="palette-mini-swatch" style="background: #7a7670;"></div>
+      <div class="palette-mini-info">
+        <div class="palette-mini-hex">#7A7670</div>
+        <div class="palette-mini-name">Slate</div>
+      </div>
+    </div>
+    <div class="palette-mini">
+      <div class="palette-mini-swatch" style="background: #4a4640;"></div>
+      <div class="palette-mini-info">
+        <div class="palette-mini-hex">#4A4640</div>
+        <div class="palette-mini-name">Carbon</div>
+      </div>
+    </div>
+    <div class="palette-mini">
+      <div class="palette-mini-swatch" style="background: #8b3a3a;"></div>
+      <div class="palette-mini-info">
+        <div class="palette-mini-hex">#8B3A3A</div>
+        <div class="palette-mini-name">Exposure Red</div>
+      </div>
+    </div>
+    <div class="palette-mini">
+      <div class="palette-mini-swatch" style="background: #4a7a5c;"></div>
+      <div class="palette-mini-info">
+        <div class="palette-mini-hex">#4A7A5C</div>
+        <div class="palette-mini-name">Outcome Green</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Semantic Colors</h3>
+  <p><strong>Exposure Red (#8B3A3A)</strong> — Used exclusively for quantified financial exposure values in case studies and reports. When a reader sees this color, it means "this is a financial number representing risk."</p>
+  <p><strong>Outcome Green (#4A7A5C)</strong> — Used for decision outcomes and positive results. When a reader sees this color, it means "this is what changed because of the assessment." This is a functional color only — it does not appear in the brand palette outside of case study outcomes.</p>
+
+  <div class="rule"></div>
+
+  <h3>Why This Palette Works</h3>
+  <p>The light, open base (white/snow/pearl) creates a sense of clarity and precision — the visual equivalent of a clean, well-organized assessment report. There's nothing hidden, nothing obscured. The brand breathes through white space.</p>
+  <p>Copper as the sole accent is the key decision. It's warmer and more grounded than gold — the material of precision instruments and architectural hardware, not fashion or luxury. It carries institutional weight without the associations that gold triggers (luxury, finance-bro, overused). Against the warm gray palette, copper feels inevitable — like it belongs there naturally.</p>
+  <p>The restraint of a single accent color is itself a brand statement. Two or three accent colors signal a firm trying to be multiple things. One accent — used consistently, used precisely — signals a firm that knows exactly what it is.</p>
+</div>
+
+<!-- ════════ 03 — TYPOGRAPHY ════════ -->
+<div class="section">
+  <p class="section-num">03 — Typography</p>
+  <h2>Three typefaces, <em>three roles</em></h2>
+  <p class="section-intro">The type system is built around clarity of function. Each typeface has a specific role. The display face carries authority, the body face carries readability, and the mono face carries data and precision.</p>
+
+  <div class="type-specimen">
+    <div class="type-specimen-label">Display — Source Serif 4</div>
+    <div class="type-specimen-sample" style="font-family: 'Source Serif 4', Georgia, serif; font-size: 2.8rem; font-weight: 400; color: var(--ink);">
+      We Make Governance <em style="font-style: italic; color: var(--accent);">Measurable.</em>
+    </div>
+    <div class="type-specimen-meta">
+      Used for: Headlines, page titles, case study titles, pull quotes, tagline<br>
+      Weights: 300 Light, 400 Regular, 500 Medium, 400 Italic<br>
+      Character: A contemporary serif with moderate contrast — authoritative but approachable. Less ornate than traditional high-contrast serifs, which keeps it from feeling like a law firm. Excellent screen rendering at all sizes.
+    </div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="type-specimen-label">Body — Archivo</div>
+    <div class="type-specimen-sample" style="font-family: 'Archivo', sans-serif; font-size: 1.05rem; font-weight: 300; line-height: 1.8; color: var(--slate);">
+      Chan García is an independent advisory firm that helps investment committees, private capital, and companies entering Mexico understand exactly what their legal, governance, and regulatory exposure costs — in financial terms, not legal abstractions.
+    </div>
+    <div class="type-specimen-meta">
+      Used for: Body text, descriptions, navigation, form labels, buttons<br>
+      Weights: 200 ExtraLight, 300 Light, 400 Regular, 500 Medium, 600 SemiBold<br>
+      Character: A grotesque sans-serif with a slightly condensed proportion — clean, modern, and highly readable. The condensed quality gives it a more distinctive personality than standard grotesques while maintaining excellent legibility at body sizes.
+    </div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="type-specimen-label">Data / Labels — JetBrains Mono</div>
+    <div class="type-specimen-sample" style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent);">
+      Regulatory Risk & Financial Exposure Advisors · Mexico
+    </div>
+    <div class="type-specimen-meta">
+      Used for: Section labels, categories, metadata, dates, credentials, data labels, descriptor lines<br>
+      Weights: 300 Light, 400 Regular, 500 Medium<br>
+      Character: A monospaced face designed for clarity. Taller x-height and wider apertures than most monospaced fonts — legible at the very small sizes the brand uses for labels and metadata. The technical character reinforces the quantitative positioning.
+    </div>
+  </div>
+
+  <div class="rule"></div>
+
+  <h3>Typography Rules</h3>
+  <p><strong>Headlines use serif only.</strong> The display serif is the authority signal. Sans-serif headlines dilute the institutional tone.</p>
+  <p><strong>Body text uses sans-serif only.</strong> Long-form reading in serif on screens reduces readability. The sans-serif body maintains clarity across all devices.</p>
+  <p><strong>Monospaced type is always uppercase, always small.</strong> It functions as a label system — section markers, categories, metadata. Never used for paragraphs or headlines.</p>
+  <p><strong>Copper is the accent color everywhere.</strong> Monospaced labels, section numbers, italic keywords in headlines, CTAs, and active states all use copper. The restraint of a single accent makes the brand immediately recognizable.</p>
+</div>
+
+<!-- ════════ 04 — LOGO SYSTEM ════════ -->
+<div class="section">
+  <p class="section-num">04 — Logo system</p>
+  <h2>The <em>mark</em></h2>
+  <p class="section-intro">The logo is typography-driven — no symbol, no icon. The copper horizontal rule between the wordmark and descriptor is the brand's most distinctive visual element.</p>
+
+  <h3>Primary Logo — Light Background</h3>
+  <div class="logo-display">
+    <div class="logo-display-light">
+      <svg viewBox="0 0 600 140" xmlns="http://www.w3.org/2000/svg" width="600">
+        <text x="300" y="60" text-anchor="middle" font-family="'Source Serif 4', Georgia, serif" font-size="52" font-weight="500" fill="#1e1c19" letter-spacing="6">CHAN GARCÍA</text>
+        <line x1="100" y1="78" x2="500" y2="78" stroke="#9a6b42" stroke-width="1.2"/>
+        <text x="300" y="106" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="400" fill="#7a7670" letter-spacing="3.5">REGULATORY RISK &amp; FINANCIAL EXPOSURE ADVISORS · MEXICO</text>
+      </svg>
+    </div>
+    <div class="logo-display-label">
+      <span>Primary lockup — on white or snow backgrounds</span>
+      <span>Minimum width: 280px</span>
+    </div>
+  </div>
+
+  <h3>Primary Logo — Dark Background</h3>
+  <div class="logo-display">
+    <div class="logo-display-dark">
+      <svg viewBox="0 0 600 140" xmlns="http://www.w3.org/2000/svg" width="600">
+        <text x="300" y="60" text-anchor="middle" font-family="'Source Serif 4', Georgia, serif" font-size="52" font-weight="500" fill="#f8f8f7" letter-spacing="6">CHAN GARCÍA</text>
+        <line x1="100" y1="78" x2="500" y2="78" stroke="#9a6b42" stroke-width="1.2"/>
+        <text x="300" y="106" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="400" fill="rgba(248,248,247,0.4)" letter-spacing="3.5">REGULATORY RISK &amp; FINANCIAL EXPOSURE ADVISORS · MEXICO</text>
+      </svg>
+    </div>
+    <div class="logo-display-label">
+      <span>Primary lockup — on ink or dark section backgrounds</span>
+      <span>Copper rule remains at full color</span>
+    </div>
+  </div>
+
+  <h3>Primary Logo — Gray Background</h3>
+  <div class="logo-display">
+    <div class="logo-display-gray">
+      <svg viewBox="0 0 600 140" xmlns="http://www.w3.org/2000/svg" width="600">
+        <text x="300" y="60" text-anchor="middle" font-family="'Source Serif 4', Georgia, serif" font-size="52" font-weight="500" fill="#1e1c19" letter-spacing="6">CHAN GARCÍA</text>
+        <line x1="100" y1="78" x2="500" y2="78" stroke="#9a6b42" stroke-width="1.2"/>
+        <text x="300" y="106" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="400" fill="#7a7670" letter-spacing="3.5">REGULATORY RISK &amp; FINANCIAL EXPOSURE ADVISORS · MEXICO</text>
+      </svg>
+    </div>
+    <div class="logo-display-label">
+      <span>Primary lockup — on pearl/fog backgrounds</span>
+      <span>Works on any neutral warm gray</span>
+    </div>
+  </div>
+
+  <h3>Compact Wordmark</h3>
+  <div class="logo-display">
+    <div class="logo-display-light" style="padding: 40px 48px;">
+      <svg viewBox="0 0 280 32" xmlns="http://www.w3.org/2000/svg" width="280">
+        <text x="0" y="24" font-family="'Source Serif 4', Georgia, serif" font-size="22" font-weight="500" fill="#1e1c19" letter-spacing="3">CHAN GARCÍA</text>
+      </svg>
+    </div>
+    <div class="logo-display-label">
+      <span>Compact wordmark — navigation, headers, small applications</span>
+      <span>No descriptor line or copper rule at this size</span>
+    </div>
+  </div>
+
+  <div class="rule"></div>
+
+  <h3>The Copper Rule</h3>
+  <p>The single horizontal copper line between the wordmark and the descriptor is the brand's most distinctive element. It appears in the logo, as section dividers on the website, at the top of accent sections, and as a signature detail on printed materials. Always use copper (#9A6B42) — at full opacity in the logo, at reduced opacity (30–40%) when used as a page divider. The copper rule is the one element that should appear on every branded touchpoint.</p>
+
+  <h3>"Abogados" — When to Use</h3>
+  <p>The English-facing brand uses "CHAN GARCÍA" with the descriptor "Regulatory Risk & Financial Exposure Advisors · Mexico." The word "Abogados" does not appear in the international-facing brand. For the Spanish domestic site, "CHAN GARCÍA ABOGADOS" may be used with a Spanish descriptor. The two brand expressions serve different audiences and should not be mixed.</p>
+</div>
+
+<!-- ════════ 05 — VISUAL DIRECTION ════════ -->
+<div class="section">
+  <p class="section-num">05 — Visual direction</p>
+  <h2>Photography and <em>imagery</em></h2>
+  <p class="section-intro">The brand uses no stock photography. Imagery is architectural, textural, and abstract — reinforcing the analytical, Mexico-focused identity.</p>
+
+  <div class="visual-grid">
+    <div class="visual-card">
+      <div class="visual-swatch" style="background: linear-gradient(135deg, #e5e3de, #c4c1ba);">
+        <span class="visual-swatch-label" style="color: var(--slate);">Architectural photography<br>Mexico City concrete, glass,<br>geometric forms</span>
+      </div>
+      <div class="visual-info">
+        <div class="visual-title">Architecture</div>
+        <div class="visual-desc">Mexico City's built environment — desaturated, high-key, emphasizing light and structure. No people in architectural shots.</div>
+      </div>
+    </div>
+    <div class="visual-card">
+      <div class="visual-swatch" style="background: linear-gradient(135deg, #f0efec, #e5e3de);">
+        <span class="visual-swatch-label" style="color: var(--ash);">Abstract / textural<br>Paper, stone, concrete<br>Macro surfaces</span>
+      </div>
+      <div class="visual-info">
+        <div class="visual-title">Texture & Material</div>
+        <div class="visual-desc">Close-up surfaces — polished concrete, stone, linen paper, architectural details. Blog headers and section backgrounds.</div>
+      </div>
+    </div>
+    <div class="visual-card">
+      <div class="visual-swatch" style="background: linear-gradient(135deg, #f8f8f7, #e5e3de);">
+        <span class="visual-swatch-label" style="color: var(--ash);">Data as visual<br>Grids, heatmaps, charts<br>as brand texture</span>
+      </div>
+      <div class="visual-info">
+        <div class="visual-title">Data Visualization</div>
+        <div class="visual-desc">Abstracted heatmaps, grid patterns, and exposure visualizations as graphic elements. Reinforces the quantitative identity.</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Photo Treatment</h3>
+  <p>All photography should be desaturated and shifted toward the warm gray palette. High-key treatment — bright, open, with soft shadows. The goal is images that feel like they exist in the same clean, light world as the rest of the brand. No heavy contrast, no moody darkness, no saturated color.</p>
+
+  <div class="dodont-grid" style="margin-top: 32px;">
+    <div class="dodont-card">
+      <div class="dodont-label do-label">Use</div>
+      <p>Mexico City architectural photography (desaturated, high-key, bright)</p>
+      <p>Abstract material textures (concrete, stone, paper, linen)</p>
+      <p>Data visualization patterns as graphic elements</p>
+      <p>Clean, minimal partner headshots (light neutral background)</p>
+      <p>Typography-driven layouts with generous white space</p>
+      <p>The copper rule as a signature graphic element</p>
+    </div>
+    <div class="dodont-card">
+      <div class="dodont-label dont-label">Never use</div>
+      <p>Stock photography of handshakes, boardrooms, or smiling professionals</p>
+      <p>Gavels, scales of justice, or any legal iconography</p>
+      <p>Mexican flag imagery, maps as hero images, or tourism photography</p>
+      <p>Bright, saturated colors — everything stays within the warm gray range</p>
+      <p>Dark, moody imagery — the brand is light and open, not shadowy</p>
+      <p>Decorative patterns, borders, or embellishments</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ 06 — BRAND FEEL ════════ -->
+<div class="section">
+  <p class="section-num">06 — Brand character</p>
+  <h2>What the brand should <em>feel</em> like</h2>
+
+  <div class="dodont-grid">
+    <div class="dodont-card">
+      <div class="dodont-label do-label">Chan García should feel like</div>
+      <p>A clean, well-organized assessment report</p>
+      <p>The private wealth division — precise, calm, minimal</p>
+      <p>A Swiss financial institution — clarity as a design principle</p>
+      <p>A firm that speaks the language of capital, not law</p>
+      <p>Light, open, nothing hidden — transparency as visual identity</p>
+      <p>Specialized, Mexico-focused, independent</p>
+    </div>
+    <div class="dodont-card">
+      <div class="dodont-label dont-label">Chan García should never feel like</div>
+      <p>A traditional law firm (no gavels, no "decades of experience")</p>
+      <p>A Big Four consultancy (no buzzwords, no frameworks-as-products)</p>
+      <p>Dark, moody, or heavy — the brand breathes through white space</p>
+      <p>A boutique anything (boutique implies small and cute)</p>
+      <p>A tech company or startup (no gradients, no rounded corners)</p>
+      <p>Promotional, sales-driven, or marketing-heavy</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ CLOSING ════════ -->
+<div class="section" style="margin-bottom: 120px;">
+  <div class="rule"></div>
+  <p style="font-family: 'Source Serif 4', Georgia, serif; font-size: 1.4rem; font-weight: 400; font-style: italic; color: var(--ink); line-height: 1.5; max-width: 580px; margin: 48px 0 24px;">The visual identity should make a PE partner, a CFO, or an investment committee member feel that this firm understands their world — before they read a single word.</p>
+  <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ash);">Chan García · Brand Identity System · Version 1.0</p>
+</div>
+
+</div>
+</body>
+</html>

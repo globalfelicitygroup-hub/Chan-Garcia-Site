@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evidence — How Quantified Governance Risk Changes Decisions | Chan García</title>
+<meta name="description" content="Case studies showing how Chan García's independent governance risk assessments quantified financial exposure and changed capital allocation decisions in Mexico.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Libre+Franklin:wght@200;300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0c1a2a;
+  --navy-mid: #132438;
+  --navy-light: #1a2f47;
+  --ivory: #faf8f4;
+  --ivory-warm: #f3f0e8;
+  --gold: #c2a24e;
+  --gold-muted: #b89a47;
+  --gold-pale: rgba(194, 162, 78, 0.12);
+  --charcoal: #2c2c2c;
+  --graphite: #5a5a58;
+  --stone: #8a8884;
+  --rule: rgba(12, 26, 42, 0.1);
+  --rule-light: rgba(255, 255, 255, 0.08);
+  --red-exposure: #a63d3d;
+  --green-outcome: #4d7a5c;
+  --amber: #b8862d;
+  --display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --body: 'Libre Franklin', -apple-system, Helvetica, Arial, sans-serif;
+  --mono: 'IBM Plex Mono', 'SF Mono', 'Consolas', monospace;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 16px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--body);
+  background: var(--ivory);
+  color: var(--charcoal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+::selection { background: var(--gold); color: var(--navy); }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+.container { max-width: 1180px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 72px); }
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.anim { opacity: 0; animation: fadeUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+.anim-fade { opacity: 0; animation: fadeIn 1s ease forwards; }
+.d1 { animation-delay: 0.08s; }
+.d2 { animation-delay: 0.2s; }
+.d3 { animation-delay: 0.35s; }
+.d4 { animation-delay: 0.5s; }
+.d5 { animation-delay: 0.65s; }
+
+/* ─── SECTION LABEL ─── */
+.section-label {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 44px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.section-label::after {
+  content: '';
+  height: 1px;
+  width: 64px;
+  background: var(--gold);
+  opacity: 0.4;
+}
+.section-label--light { color: var(--gold); }
+.section-label--light::after { background: var(--gold); opacity: 0.25; }
+
+/* ════════════════════════════════════════════════════════════
+   NAVIGATION
+   ════════════════════════════════════════════════════════════ */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(250, 248, 244, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 5vw, 72px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+.nav-wordmark {
+  font-family: var(--display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+.nav-links { display: flex; gap: 28px; align-items: center; }
+.nav-links a {
+  font-family: var(--body);
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--graphite);
+  transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--gold-muted); }
+.nav-links a.active { color: var(--navy); }
+.nav-cta-btn {
+  font-family: var(--mono) !important;
+  font-size: 0.68rem !important;
+  letter-spacing: 0.12em !important;
+  padding: 10px 26px !important;
+  border: 1.5px solid var(--navy) !important;
+  color: var(--navy) !important;
+  transition: all 0.35s !important;
+}
+.nav-cta-btn:hover {
+  background: var(--navy) !important;
+  color: var(--ivory) !important;
+}
+
+/* ════════════════════════════════════════════════════════════
+   PAGE HERO
+   ════════════════════════════════════════════════════════════ */
+.page-hero {
+  padding-top: 148px;
+  padding-bottom: 80px;
+  border-bottom: 1px solid var(--rule);
+}
+.page-hero-descriptor {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 36px;
+}
+.page-hero h1 {
+  font-family: var(--display);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  color: var(--navy);
+  max-width: 720px;
+  margin-bottom: 32px;
+}
+.page-hero h1 em { font-style: italic; color: var(--gold-muted); }
+.page-hero-sub {
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--graphite);
+  max-width: 620px;
+}
+
+/* ════════════════════════════════════════════════════════════
+   PLACEHOLDER NOTICE
+   ════════════════════════════════════════════════════════════ */
+.placeholder-notice {
+  padding: 28px 0;
+  background: var(--navy);
+  border-top: 2px solid var(--gold);
+}
+.notice-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.notice-badge {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--navy);
+  background: var(--gold);
+  padding: 5px 14px;
+  flex-shrink: 0;
+}
+.notice-text {
+  font-size: 0.8rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(250, 248, 244, 0.6);
+}
+.notice-text strong {
+  color: rgba(250, 248, 244, 0.85);
+  font-weight: 500;
+}
+
+/* ════════════════════════════════════════════════════════════
+   CASE STUDIES
+   ════════════════════════════════════════════════════════════ */
+.cases {
+  padding: 96px 0;
+}
+
+/* Individual case */
+.case {
+  border: 1px solid var(--rule);
+  background: var(--ivory);
+  margin-bottom: 48px;
+  position: relative;
+}
+.case:last-child { margin-bottom: 0; }
+
+.case-header {
+  padding: 44px 52px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.case-overline {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.case-sector-tags {
+  display: flex;
+  gap: 6px;
+}
+.case-sector-tag {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.06em;
+  padding: 4px 12px;
+  border: 1px solid var(--rule);
+  color: var(--stone);
+}
+.case-placeholder-tag {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.06em;
+  padding: 4px 12px;
+  background: rgba(184, 134, 45, 0.1);
+  border: 1px solid rgba(184, 134, 45, 0.2);
+  color: var(--amber);
+}
+
+.case-body {
+  display: grid;
+  grid-template-columns: 1fr 1px 380px;
+  gap: 0;
+}
+.case-narrative {
+  padding: 36px 52px 48px;
+}
+.case-divider {
+  background: var(--rule);
+}
+.case-metrics {
+  padding: 36px 44px 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+.case-narrative h2 {
+  font-family: var(--display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--navy);
+  margin-bottom: 24px;
+}
+
+/* Situation / Findings / Changed sections */
+.case-section {
+  margin-bottom: 28px;
+}
+.case-section:last-child { margin-bottom: 0; }
+.case-section-label {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 10px;
+}
+.case-section p {
+  font-size: 0.86rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--graphite);
+}
+
+/* Quote */
+.case-quote {
+  font-family: var(--display);
+  font-size: 1rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--navy);
+  padding: 24px 0 0;
+  margin-top: 28px;
+  border-top: 1px solid var(--rule);
+  line-height: 1.6;
+}
+.case-quote-attr {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--stone);
+  margin-top: 8px;
+  font-style: normal;
+}
+
+/* Metrics sidebar */
+.case-exposure {
+  margin-bottom: 32px;
+}
+.case-exp-label {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 10px;
+}
+.case-exp-value {
+  font-family: var(--display);
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--red-exposure);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.case-exp-note {
+  font-size: 0.72rem;
+  font-weight: 300;
+  color: var(--stone);
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+/* Evaluation scope */
+.case-scope {
+  margin-bottom: 32px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--rule);
+}
+.case-scope-label {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 12px;
+}
+.case-scope-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.case-scope-tag {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.04em;
+  padding: 4px 12px;
+  background: var(--gold-pale);
+  color: var(--charcoal);
+  border: 1px solid rgba(194, 162, 78, 0.15);
+}
+
+/* Outcomes */
+.case-outcomes {
+  margin-top: auto;
+}
+.case-outcomes-label {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 16px;
+}
+.case-outcome {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--charcoal);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+.case-outcome:last-child { margin-bottom: 0; }
+.case-outcome::before {
+  content: '';
+  width: 5px; height: 5px;
+  background: var(--green-outcome);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+/* ════════════════════════════════════════════════════════════
+   IMPACT SUMMARY
+   ════════════════════════════════════════════════════════════ */
+.impact-summary {
+  padding: 72px 0;
+  background: var(--navy);
+}
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--rule-light);
+  border: 1px solid var(--rule-light);
+}
+.impact-item {
+  background: var(--navy);
+  padding: 40px 32px;
+  text-align: center;
+}
+.impact-value {
+  font-family: var(--display);
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.impact-label {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(250, 248, 244, 0.4);
+  line-height: 1.5;
+}
+
+/* ════════════════════════════════════════════════════════════
+   PATTERN SECTION
+   ════════════════════════════════════════════════════════════ */
+.pattern {
+  padding: 96px 0;
+  background: var(--ivory-warm);
+}
+.pattern-header {
+  margin-bottom: 48px;
+  max-width: 600px;
+}
+.pattern-header h2 {
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+.pattern-header h2 em { font-style: italic; color: var(--gold-muted); }
+.pattern-header p {
+  font-size: 0.92rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--graphite);
+}
+.pattern-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+.pattern-card {
+  background: var(--ivory);
+  padding: 40px 36px;
+}
+.pattern-card-num {
+  font-family: var(--display);
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: rgba(194, 162, 78, 0.2);
+  margin-bottom: 16px;
+}
+.pattern-card h3 {
+  font-family: var(--body);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+.pattern-card p {
+  font-size: 0.8rem;
+  font-weight: 300;
+  line-height: 1.72;
+  color: var(--graphite);
+}
+
+/* ════════════════════════════════════════════════════════════
+   CTA
+   ════════════════════════════════════════════════════════════ */
+.cta {
+  padding: 96px 0;
+  background: var(--navy);
+  position: relative;
+}
+.cta::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--gold);
+}
+.cta-inner {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.cta-overline {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 28px;
+}
+.cta-inner h2 {
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--ivory);
+  margin-bottom: 24px;
+}
+.cta-inner h2 em { font-style: italic; color: var(--gold); }
+.cta-inner > p {
+  font-size: 0.92rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(250, 248, 244, 0.5);
+  margin-bottom: 40px;
+}
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 18px 44px;
+  background: var(--gold);
+  color: var(--navy);
+  border: 1.5px solid var(--gold);
+  cursor: pointer;
+  transition: all 0.35s;
+}
+.cta-btn:hover {
+  background: transparent;
+  color: var(--gold);
+}
+.cta-contact {
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 1px solid var(--rule-light);
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+.cta-contact-item {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  color: rgba(250, 248, 244, 0.35);
+}
+.cta-contact-item a {
+  color: rgba(250, 248, 244, 0.55);
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s;
+}
+.cta-contact-item a:hover {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+/* ════════════════════════════════════════════════════════════
+   FOOTER
+   ════════════════════════════════════════════════════════════ */
+footer {
+  padding: 40px 0;
+  background: var(--ivory);
+  border-top: 1px solid var(--rule);
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-brand {
+  font-family: var(--display);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.footer-right a {
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--stone);
+  transition: color 0.3s;
+}
+.footer-right a:hover { color: var(--gold-muted); }
+.footer-copy {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  color: var(--stone);
+}
+.footer-tagline {
+  text-align: center;
+  padding: 20px 0 0;
+  margin-top: 20px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--display);
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--gold-muted);
+}
+
+/* ════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════════════════════ */
+@media (max-width: 960px) {
+  .case-body { grid-template-columns: 1fr; }
+  .case-divider { height: 1px; }
+  .case-metrics { padding: 36px 52px 48px; }
+  .impact-grid { grid-template-columns: repeat(2, 1fr); }
+  .pattern-grid { grid-template-columns: 1fr; }
+  .cta-contact { flex-direction: column; gap: 10px; }
+  .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
+  .footer-right { flex-direction: column; gap: 12px; }
+}
+@media (max-width: 600px) {
+  .nav-links a:not(.nav-cta-btn) { display: none; }
+  .page-hero h1 { font-size: 2rem; }
+  .case-header { padding: 32px 28px 0; }
+  .case-narrative { padding: 28px 28px 36px; }
+  .case-metrics { padding: 28px; }
+  .impact-grid { grid-template-columns: 1fr; }
+  .notice-inner { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════════ NAV ════════ -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-wordmark">Chan García</a>
+    <div class="nav-links">
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="evidence.html" class="active">Evidence</a>
+      <a href="exposure-report.html">The Exposure Report</a>
+      <a href="contact.html" class="nav-cta-btn">Engage</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════ PAGE HERO ════════ -->
+<section class="page-hero">
+  <div class="container">
+    <p class="page-hero-descriptor anim d1">Evidence</p>
+    <h1 class="anim d2">When the Numbers Change <em>the Decision</em></h1>
+    <p class="page-hero-sub anim d3">Every assessment tells the same story: governance risk that was described qualitatively becomes a different conversation when it has a financial number attached. These cases show what changes when exposure is quantified.</p>
+  </div>
+</section>
+
+<!-- ════════ PLACEHOLDER NOTICE ════════ -->
+<div class="placeholder-notice anim-fade d4">
+  <div class="container">
+    <div class="notice-inner">
+      <span class="notice-badge">Internal note</span>
+      <p class="notice-text"><strong>These case studies are illustrative and anonymized placeholders.</strong> They should be replaced with real, documented client outcomes before publication. Even one heavily anonymized real case showing sector → exposure found → financial range → how the decision changed will outperform all illustrative content. This is the single highest-leverage content investment the firm can make.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ CASE STUDIES ════════ -->
+<section class="cases">
+  <div class="container">
+
+    <!-- ─── CASE 01 ─── -->
+    <div class="case">
+      <div class="case-header">
+        <div class="case-overline">Case 01 · Private Equity · Manufacturing Acquisition</div>
+        <div class="case-sector-tags">
+          <span class="case-sector-tag">PE Due Diligence</span>
+          <span class="case-sector-tag">Manufacturing</span>
+          <span class="case-sector-tag">Monterrey</span>
+          <span class="case-placeholder-tag">Illustrative</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <div class="case-narrative">
+          <h2>Standard legal due diligence was complete. The investment committee asked for an independent governance review before closing.</h2>
+
+          <div class="case-section">
+            <div class="case-section-label">The situation</div>
+            <p>A U.S.-based private equity fund was evaluating the acquisition of a mid-size manufacturing company in Monterrey. Standard legal due diligence had been completed by external counsel. The investment committee required an independent governance and regulatory exposure review before approving the deal — specifically, a financially quantified view of what the identified risks would actually cost.</p>
+          </div>
+
+          <div class="case-section">
+            <div class="case-section-label">What we found</div>
+            <p>The assessment identified material exposure across three areas: labor compliance gaps under STPS regulations that the seller's counsel had characterized as administrative, a partially undocumented environmental permit history creating contingent liability, and a related-party transaction structure generating transfer pricing and tax contingency risk. Each finding was translated into a probability-weighted financial exposure range using actuarial methodology.</p>
+          </div>
+
+          <div class="case-section">
+            <div class="case-section-label">What changed</div>
+            <p>The fund used Chan García's quantified exposure report to renegotiate the purchase price, establish an escrow mechanism for potential remediation costs, and require specific representations and warranties addressing each identified risk. The deal closed on revised terms that reflected the actual financial exposure — not the seller's characterization of the risk.</p>
+          </div>
+
+          <div class="case-quote">
+            "The legal review said there were issues. Chan García said what they cost."
+            <div class="case-quote-attr">— Investment Committee Member</div>
+          </div>
+        </div>
+
+        <div class="case-divider"></div>
+
+        <div class="case-metrics">
+          <div class="case-exposure">
+            <div class="case-exp-label">Quantified exposure range</div>
+            <div class="case-exp-value">$2.1M – $5.8M</div>
+            <div class="case-exp-note">Base and downside scenarios, probability-weighted</div>
+          </div>
+
+          <div class="case-scope">
+            <div class="case-scope-label">Evaluation scope</div>
+            <div class="case-scope-items">
+              <span class="case-scope-tag">STPS labor compliance</span>
+              <span class="case-scope-tag">Environmental permits</span>
+              <span class="case-scope-tag">Related-party transactions</span>
+              <span class="case-scope-tag">Tax contingency</span>
+              <span class="case-scope-tag">Governance structure</span>
+            </div>
+          </div>
+
+          <div class="case-outcomes">
+            <div class="case-outcomes-label">Decision outcomes</div>
+            <div class="case-outcome">Purchase price renegotiated</div>
+            <div class="case-outcome">Escrow mechanism established</div>
+            <div class="case-outcome">Specific reps and warranties required</div>
+            <div class="case-outcome">Deal closed on revised terms</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── CASE 02 ─── -->
+    <div class="case">
+      <div class="case-header">
+        <div class="case-overline">Case 02 · U.S. Manufacturer · Nearshoring Entry</div>
+        <div class="case-sector-tags">
+          <span class="case-sector-tag">Market Entry</span>
+          <span class="case-sector-tag">Industrial</span>
+          <span class="case-sector-tag">Bajío Region</span>
+          <span class="case-placeholder-tag">Illustrative</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <div class="case-narrative">
+          <h2>Legal counsel had drafted the corporate structure. The CFO wanted an independent view of exposure before board approval.</h2>
+
+          <div class="case-section">
+            <div class="case-section-label">The situation</div>
+            <p>A mid-size U.S. industrial company was evaluating a manufacturing subsidiary in the Bajío region to support nearshoring demand. Legal counsel had drafted the corporate structure and entity formation documents. The CFO wanted an independent assessment of governance and regulatory exposure before presenting the entry plan to the board for approval.</p>
+          </div>
+
+          <div class="case-section">
+            <div class="case-section-label">What we found</div>
+            <p>The review identified that the proposed structure underestimated IMMEX compliance obligations, created transfer pricing exposure given the intercompany arrangement, and lacked adequate governance documentation to satisfy the parent company's audit committee standards. Each gap was quantified as a financial exposure range with specific remediation cost estimates.</p>
+          </div>
+
+          <div class="case-section">
+            <div class="case-section-label">What changed</div>
+            <p>The board approved the Mexico entry on a revised corporate structure that addressed each identified exposure. A compliance remediation timeline was established, and the Year 1 governance budget was adjusted to reflect actual exposure rather than the original estimate. The CFO presented Chan García's exposure report directly to the audit committee as an independent validation of the entry decision.</p>
+          </div>
+
+          <div class="case-quote">
+            "The entry happened. It happened with eyes open."
+            <div class="case-quote-attr">— CFO, U.S. Industrial Manufacturer</div>
+          </div>
+        </div>
+
+        <div class="case-divider"></div>
+
+        <div class="case-metrics">
+          <div class="case-exposure">
+            <div class="case-exp-label">Result</div>
+            <div class="case-exp-value">Revised Structure</div>
+            <div class="case-exp-note">Entry approved with remediated governance framework</div>
+          </div>
+
+          <div class="case-scope">
+            <div class="case-scope-label">Evaluation scope</div>
+            <div class="case-scope-items">
+              <span class="case-scope-tag">IMMEX compliance</span>
+              <span class="case-scope-tag">Transfer pricing</span>
+              <span class="case-scope-tag">Governance documentation</span>
+              <span class="case-scope-tag">Audit committee standards</span>
+              <span class="case-scope-tag">Entity structure</span>
+            </div>
+          </div>
+
+          <div class="case-outcomes">
+            <div class="case-outcomes-label">Decision outcomes</div>
+            <div class="case-outcome">Entry approved on revised corporate structure</div>
+            <div class="case-outcome">Compliance remediation timeline established</div>
+            <div class="case-outcome">Year 1 governance budget reflects actual exposure</div>
+            <div class="case-outcome">Exposure report presented to audit committee</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── CASE 03 ─── -->
+    <div class="case">
+      <div class="case-header">
+        <div class="case-overline">Case 03 · Family Office · Portfolio Monitoring</div>
+        <div class="case-sector-tags">
+          <span class="case-sector-tag">Ongoing Monitoring</span>
+          <span class="case-sector-tag">Multi-Sector</span>
+          <span class="case-sector-tag">Mexico City</span>
+          <span class="case-placeholder-tag">Illustrative</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <div class="case-narrative">
+          <h2>Quarterly governance monitoring across three operating companies surfaced risks a one-time review would have missed.</h2>
+
+          <div class="case-section">
+            <div class="case-section-label">The situation</div>
+            <p>A Mexican family office with investments across three operating companies — a logistics operation, a real estate developer, and a financial services entity — engaged Chan García for quarterly governance risk monitoring across the portfolio. The objective was to establish an independent, recurring view of governance exposure that could be reported to the internal investment committee.</p>
+          </div>
+
+          <div class="case-section">
+            <div class="case-section-label">What we found</div>
+            <p>Over two quarterly monitoring cycles, the assessment identified a regulatory change materially increasing the financial services entity's SAT compliance exposure — a change that standard legal counsel had not flagged as financially material. The monitoring also identified deteriorating governance documentation in the logistics company ahead of a planned secondary offering, creating potential investor confidence risk.</p>
+          </div>
+
+          <div class="case-section">
+            <div class="case-section-label">What changed</div>
+            <p>Both issues were addressed before they became financial events. The logistics company's governance documentation was remediated in time for the offering. The financial services entity's SAT exposure was addressed proactively. The family office now uses Chan García's quarterly governance risk scores as a standard component of its internal investment committee reporting.</p>
+          </div>
+
+          <div class="case-quote">
+            "Monitoring caught what a one-time review would have missed."
+            <div class="case-quote-attr">— Family Office Principal</div>
+          </div>
+        </div>
+
+        <div class="case-divider"></div>
+
+        <div class="case-metrics">
+          <div class="case-exposure">
+            <div class="case-exp-label">Result</div>
+            <div class="case-exp-value">Pre-Emptive Action</div>
+            <div class="case-exp-note">Risks addressed before financial impact materialized</div>
+          </div>
+
+          <div class="case-scope">
+            <div class="case-scope-label">Portfolio scope</div>
+            <div class="case-scope-items">
+              <span class="case-scope-tag">Logistics</span>
+              <span class="case-scope-tag">Real estate</span>
+              <span class="case-scope-tag">Financial services</span>
+              <span class="case-scope-tag">SAT compliance</span>
+              <span class="case-scope-tag">Governance documentation</span>
+            </div>
+          </div>
+
+          <div class="case-outcomes">
+            <div class="case-outcomes-label">Decision outcomes</div>
+            <div class="case-outcome">Both issues addressed before financial impact</div>
+            <div class="case-outcome">Governance remediated ahead of secondary offering</div>
+            <div class="case-outcome">SAT exposure addressed proactively</div>
+            <div class="case-outcome">Quarterly risk scores integrated into IC reporting</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════ IMPACT SUMMARY ════════ -->
+<div class="impact-summary">
+  <div class="container">
+    <div class="impact-grid">
+      <div class="impact-item">
+        <div class="impact-value">100%</div>
+        <div class="impact-label">Of assessments delivered a<br>quantified exposure range</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-value">3</div>
+        <div class="impact-label">Service types covering<br>the full engagement lifecycle</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-value">5-Phase</div>
+        <div class="impact-label">Structured methodology<br>with actuarial quantification</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-value">1 of 36</div>
+        <div class="impact-label">Authorized PRIME<br>evaluators in Mexico</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ PATTERN SECTION ════════ -->
+<section class="pattern">
+  <div class="container">
+    <div class="section-label">The pattern</div>
+    <div class="pattern-header">
+      <h2>What we see <em>across engagements</em></h2>
+      <p>While every assessment is unique, the same structural pattern recurs: qualitative risk becomes a different conversation when it carries a financial number.</p>
+    </div>
+    <div class="pattern-grid">
+      <div class="pattern-card">
+        <div class="pattern-card-num">01</div>
+        <h3>Legal review says "there are issues."</h3>
+        <p>Standard legal due diligence identifies governance gaps, compliance concerns, or regulatory exposure — but characterizes them qualitatively. The buyer knows risk exists but cannot evaluate its financial magnitude.</p>
+      </div>
+      <div class="pattern-card">
+        <div class="pattern-card-num">02</div>
+        <h3>Chan García says what they cost.</h3>
+        <p>Our independent assessment converts each identified risk into a probability-weighted financial exposure range. The buyer now has a number — or a range — that can be incorporated into deal models, board presentations, and committee deliberations.</p>
+      </div>
+      <div class="pattern-card">
+        <div class="pattern-card-num">03</div>
+        <h3>The decision changes.</h3>
+        <p>Prices are renegotiated. Escrows are created. Structures are revised. Monitoring is initiated. Governance is remediated. The decision is made with clarity about financial exposure — not despite uncertainty about it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ CTA ════════ -->
+<section class="cta">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="cta-overline">Your governance risk has a number</div>
+      <h2>Want to know <em>what it is?</em></h2>
+      <p>If you're evaluating a transaction, entering Mexico, or overseeing a portfolio with governance exposure — a 30-minute conversation with a Chan García partner is the fastest way to understand whether an independent assessment is right for your situation.</p>
+      <a href="/cdn-cgi/l/email-protection#b7d4d8d9c3d6d4c3f7d4dfd6d9d0d6c5d4ded699d4d8da" class="cta-btn">Request an Assessment</a>
+      <div class="cta-contact">
+        <div class="cta-contact-item">Mexico City, Mexico</div>
+        <div class="cta-contact-item"><a href="/cdn-cgi/l/email-protection#3e5d51504a5f5d4a7e5d565f50595f4c5d575f105d5153"><span class="__cf_email__" data-cfemail="8eede1e0faefedfaceede6efe0e9effcede7efa0ede1e3">[email&#160;protected]</span></a></div>
+        <div class="cta-contact-item"><a href="https://changarcia.com">changarcia.com</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">Chan García</div>
+      <div class="footer-right">
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="Ch
+<footer style="padding:40px 0;background:#faf8f4;border-top:1px solid rgba(12,26,42,0.1);">
+  <div style="max-width:1180px;margin:0 auto;padding:0 clamp(24px,5vw,72px);display:flex;justify-content:space-between;align-items:center;">
+    <div style="font-family:'Playfair Display',Georgia,serif;font-size:1rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#0c1a2a;">Chan García</div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:0.6rem;color:#8a8884;">© 2026 Chan García</div>
+  </div>
+  <div style="text-align:center;padding:20px 0 0;margin-top:20px;border-top:1px solid rgba(12,26,42,0.1);font-family:'Playfair Display',Georgia,serif;font-size:0.88rem;font-style:italic;color:#b89a47;">We Make Governance Measurable.</div>
+</footer>
+</body>
+</html>

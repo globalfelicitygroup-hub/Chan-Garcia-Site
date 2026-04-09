@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Exposure Report — Governance & Regulatory Risk Intelligence | Chan García</title>
+<meta name="description" content="Analysis of governance risk, regulatory exposure, and compliance dynamics in Mexico for private equity, investment committees, and companies entering the market.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Libre+Franklin:wght@200;300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0c1a2a;
+  --navy-mid: #132438;
+  --navy-light: #1a2f47;
+  --ivory: #faf8f4;
+  --ivory-warm: #f3f0e8;
+  --gold: #c2a24e;
+  --gold-muted: #b89a47;
+  --gold-pale: rgba(194, 162, 78, 0.12);
+  --charcoal: #2c2c2c;
+  --graphite: #5a5a58;
+  --stone: #8a8884;
+  --rule: rgba(12, 26, 42, 0.1);
+  --rule-light: rgba(255, 255, 255, 0.08);
+  --display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --body: 'Libre Franklin', -apple-system, Helvetica, Arial, sans-serif;
+  --mono: 'IBM Plex Mono', 'SF Mono', 'Consolas', monospace;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 16px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--body);
+  background: var(--ivory);
+  color: var(--charcoal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+::selection { background: var(--gold); color: var(--navy); }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+.container { max-width: 1180px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 72px); }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.anim { opacity: 0; animation: fadeUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+.anim-fade { opacity: 0; animation: fadeIn 1s ease forwards; }
+.d1 { animation-delay: 0.08s; }
+.d2 { animation-delay: 0.2s; }
+.d3 { animation-delay: 0.35s; }
+.d4 { animation-delay: 0.5s; }
+.d5 { animation-delay: 0.65s; }
+
+.section-label {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 44px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.section-label::after {
+  content: '';
+  height: 1px;
+  width: 64px;
+  background: var(--gold);
+  opacity: 0.4;
+}
+
+/* ════════════════════════════════════════════════════════════
+   NAV
+   ════════════════════════════════════════════════════════════ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(250, 248, 244, 0.94);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-inner {
+  max-width: 1180px; margin: 0 auto;
+  padding: 0 clamp(24px, 5vw, 72px);
+  display: flex; align-items: center; justify-content: space-between; height: 68px;
+}
+.nav-wordmark {
+  font-family: var(--display); font-size: 1.2rem; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--navy);
+}
+.nav-links { display: flex; gap: 28px; align-items: center; }
+.nav-links a {
+  font-family: var(--body); font-size: 0.74rem; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--graphite); transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--gold-muted); }
+.nav-links a.active { color: var(--navy); }
+.nav-cta-btn {
+  font-family: var(--mono) !important; font-size: 0.68rem !important;
+  letter-spacing: 0.12em !important; padding: 10px 26px !important;
+  border: 1.5px solid var(--navy) !important; color: var(--navy) !important; transition: all 0.35s !important;
+}
+.nav-cta-btn:hover { background: var(--navy) !important; color: var(--ivory) !important; }
+
+/* ════════════════════════════════════════════════════════════
+   PAGE HERO — editorial masthead
+   ════════════════════════════════════════════════════════════ */
+.masthead {
+  padding-top: 148px;
+  padding-bottom: 56px;
+  border-bottom: 2px solid var(--gold);
+}
+.masthead-brand {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 24px;
+}
+.masthead h1 {
+  font-family: var(--display);
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: var(--navy);
+  margin-bottom: 24px;
+}
+.masthead h1 em { font-style: italic; color: var(--gold-muted); }
+.masthead-sub {
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--graphite);
+  max-width: 560px;
+}
+
+/* Category nav */
+.cat-nav {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--rule);
+  background: var(--ivory);
+  position: sticky;
+  top: 68px;
+  z-index: 50;
+}
+.cat-nav-inner {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.cat-link {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--stone);
+  white-space: nowrap;
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.cat-link:hover { color: var(--charcoal); }
+.cat-link.active {
+  color: var(--navy);
+  border-bottom-color: var(--gold);
+}
+
+/* ════════════════════════════════════════════════════════════
+   FEATURED POST — large editorial card
+   ════════════════════════════════════════════════════════════ */
+.featured {
+  padding: 72px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.featured-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--rule);
+  background: var(--ivory);
+  cursor: pointer;
+  transition: box-shadow 0.4s;
+}
+.featured-card:hover {
+  box-shadow: 0 8px 40px rgba(12, 26, 42, 0.06);
+}
+
+/* Photo area */
+.featured-img {
+  position: relative;
+  background: var(--navy-mid);
+  min-height: 420px;
+  overflow: hidden;
+}
+.featured-img-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background:
+    linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 50%, var(--navy-light) 100%);
+}
+.featured-img-placeholder svg {
+  width: 48px; height: 48px;
+  opacity: 0.15;
+}
+.featured-img-note {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(250, 248, 244, 0.2);
+  text-align: center;
+  max-width: 200px;
+  line-height: 1.6;
+}
+.featured-img-size {
+  font-family: var(--mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.08em;
+  color: rgba(250, 248, 244, 0.12);
+}
+
+.featured-content {
+  padding: 52px 48px;
+  display: flex;
+  flex-direction: column;
+}
+.featured-label {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+.featured-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.featured-category {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+.featured-date {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.04em;
+  color: var(--stone);
+}
+.featured-read-time {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.04em;
+  color: var(--stone);
+}
+.featured-content h2 {
+  font-family: var(--display);
+  font-size: clamp(1.5rem, 2.2vw, 1.9rem);
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--navy);
+  margin-bottom: 20px;
+  transition: color 0.3s;
+}
+.featured-card:hover .featured-content h2 { color: var(--gold-muted); }
+.featured-content h2 em { font-style: italic; color: var(--gold-muted); }
+.featured-excerpt {
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--graphite);
+  margin-bottom: 28px;
+}
+.featured-read {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  transition: color 0.3s;
+}
+.featured-card:hover .featured-read { color: var(--navy); }
+.featured-read::after { content: '→'; font-size: 0.85rem; }
+
+/* ════════════════════════════════════════════════════════════
+   POST GRID — cards with image areas
+   ════════════════════════════════════════════════════════════ */
+.posts {
+  padding: 72px 0;
+}
+.posts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 40px;
+}
+.posts-header h2 {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--navy);
+}
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.post-card {
+  border: 1px solid var(--rule);
+  background: var(--ivory);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: box-shadow 0.35s, transform 0.35s;
+}
+.post-card:hover {
+  box-shadow: 0 6px 32px rgba(12, 26, 42, 0.05);
+  transform: translateY(-2px);
+}
+
+/* Post image area */
+.post-img {
+  position: relative;
+  height: 200px;
+  background: var(--navy-mid);
+  overflow: hidden;
+}
+.post-img-placeholder {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 8px;
+}
+.post-img-placeholder svg {
+  width: 32px; height: 32px; opacity: 0.12;
+}
+.post-img-note {
+  font-family: var(--mono);
+  font-size: 0.48rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(250, 248, 244, 0.18);
+}
+
+.post-body {
+  padding: 28px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.post-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.post-category {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.post-date {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.04em;
+  color: var(--stone);
+}
+.post-card h3 {
+  font-family: var(--display);
+  font-size: 1.12rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 12px;
+  line-height: 1.32;
+  transition: color 0.3s;
+}
+.post-card:hover h3 { color: var(--gold-muted); }
+.post-card p {
+  font-size: 0.8rem;
+  font-weight: 300;
+  line-height: 1.72;
+  color: var(--graphite);
+  margin-bottom: 20px;
+}
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
+}
+.post-read-time {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.04em;
+  color: var(--stone);
+}
+.post-arrow {
+  width: 24px; height: 24px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  font-size: 0.7rem;
+  color: var(--stone);
+  transition: all 0.3s;
+}
+.post-card:hover .post-arrow {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--ivory);
+}
+
+/* ════════════════════════════════════════════════════════════
+   EDITORIAL BREAK — pull quote / insight
+   ════════════════════════════════════════════════════════════ */
+.editorial-break {
+  padding: 80px 0;
+  background: var(--ivory-warm);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.editorial-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+.editorial-inner blockquote {
+  font-family: var(--display);
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.45;
+  color: var(--navy);
+  margin-bottom: 20px;
+}
+.editorial-source {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+/* ════════════════════════════════════════════════════════════
+   SECONDARY GRID — 2-column feature + list
+   ════════════════════════════════════════════════════════════ */
+.secondary {
+  padding: 72px 0;
+}
+.secondary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+/* Wide card */
+.wide-card {
+  border: 1px solid var(--rule);
+  background: var(--ivory);
+  cursor: pointer;
+  transition: box-shadow 0.35s;
+}
+.wide-card:hover { box-shadow: 0 6px 32px rgba(12, 26, 42, 0.05); }
+.wide-card-img {
+  position: relative;
+  height: 240px;
+  background: var(--navy-mid);
+  overflow: hidden;
+}
+.wide-card-img .post-img-placeholder svg { width: 36px; height: 36px; }
+.wide-card-body { padding: 32px 32px 36px; }
+.wide-card-body .post-meta { margin-bottom: 12px; }
+.wide-card-body h3 {
+  font-family: var(--display);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 12px;
+  line-height: 1.3;
+  transition: color 0.3s;
+}
+.wide-card:hover h3 { color: var(--gold-muted); }
+.wide-card-body p {
+  font-size: 0.82rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--graphite);
+}
+
+/* Stacked list */
+.stacked-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--rule);
+}
+.stacked-item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 20px;
+  padding: 24px 28px;
+  background: var(--ivory);
+  border-bottom: 1px solid var(--rule);
+  align-items: start;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.stacked-item:last-child { border-bottom: none; }
+.stacked-item:hover { background: #fdfcf8; }
+.stacked-thumb {
+  width: 100px; height: 72px;
+  background: var(--navy-mid);
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.stacked-thumb-note {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: 0.4rem;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: rgba(250, 248, 244, 0.15);
+}
+.stacked-content {}
+.stacked-content .post-meta { margin-bottom: 6px; }
+.stacked-content h4 {
+  font-family: var(--display);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.35;
+  transition: color 0.3s;
+}
+.stacked-item:hover h4 { color: var(--gold-muted); }
+
+/* ════════════════════════════════════════════════════════════
+   SUBSCRIBE
+   ════════════════════════════════════════════════════════════ */
+.subscribe {
+  padding: 64px 0;
+  background: var(--navy);
+  border-top: 2px solid var(--gold);
+}
+.subscribe-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.subscribe-left h2 {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--ivory);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+.subscribe-left h2 em { font-style: italic; color: var(--gold); }
+.subscribe-left p {
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: rgba(250, 248, 244, 0.45);
+}
+.subscribe-form { display: flex; gap: 0; }
+.subscribe-input {
+  flex: 1; font-family: var(--body); font-size: 0.82rem; font-weight: 300;
+  padding: 16px 20px;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+  border-right: none; color: var(--ivory); outline: none; transition: border-color 0.3s;
+}
+.subscribe-input::placeholder { color: rgba(250,248,244,0.25); }
+.subscribe-input:focus { border-color: var(--gold); }
+.subscribe-btn {
+  font-family: var(--mono); font-size: 0.65rem; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 16px 28px; background: var(--gold); color: var(--navy);
+  border: 1px solid var(--gold); cursor: pointer; transition: all 0.35s; white-space: nowrap;
+}
+.subscribe-btn:hover { background: transparent; color: var(--gold); }
+.subscribe-note {
+  font-family: var(--mono); font-size: 0.55rem;
+  letter-spacing: 0.04em; color: rgba(250,248,244,0.2); margin-top: 12px;
+}
+
+/* ════════════════════════════════════════════════════════════
+   BLOG CTA
+   ════════════════════════════════════════════════════════════ */
+.blog-cta {
+  padding: 72px 0;
+}
+.blog-cta-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--rule);
+}
+.blog-cta-left {
+  padding: 52px 48px;
+  background: var(--ivory);
+  border-right: 1px solid var(--rule);
+}
+.blog-cta-left h2 {
+  font-family: var(--display);
+  font-size: 1.5rem; font-weight: 400;
+  color: var(--navy); margin-bottom: 16px; line-height: 1.25;
+}
+.blog-cta-left h2 em { font-style: italic; color: var(--gold-muted); }
+.blog-cta-left p {
+  font-size: 0.88rem; font-weight: 300;
+  line-height: 1.8; color: var(--graphite); margin-bottom: 28px;
+}
+.blog-cta-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--mono); font-size: 0.68rem; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 16px 36px; background: var(--navy); color: var(--ivory);
+  border: 1.5px solid var(--navy); transition: all 0.35s;
+}
+.blog-cta-btn:hover { background: transparent; color: var(--navy); }
+.blog-cta-right {
+  padding: 52px 48px;
+  background: var(--ivory-warm);
+  display: flex; flex-direction: column; justify-content: center;
+}
+.blog-cta-stat { margin-bottom: 28px; }
+.blog-cta-stat:last-child { margin-bottom: 0; }
+.blog-cta-stat-value {
+  font-family: var(--display); font-size: 1.8rem; font-weight: 400;
+  color: var(--navy); margin-bottom: 4px;
+}
+.blog-cta-stat-label {
+  font-family: var(--mono); font-size: 0.58rem;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--stone);
+}
+
+/* ════════════════════════════════════════════════════════════
+   FOOTER
+   ════════════════════════════════════════════════════════════ */
+footer {
+  padding: 40px 0; background: var(--ivory); border-top: 1px solid var(--rule);
+}
+.footer-inner { display: flex; justify-content: space-between; align-items: center; }
+.footer-brand {
+  font-family: var(--display); font-size: 1rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy);
+}
+.footer-right { display: flex; align-items: center; gap: 32px; }
+.footer-right a {
+  font-size: 0.7rem; font-weight: 400;
+  letter-spacing: 0.06em; text-transform: uppercase; color: var(--stone); transition: color 0.3s;
+}
+.footer-right a:hover { color: var(--gold-muted); }
+.footer-copy { font-family: var(--mono); font-size: 0.6rem; color: var(--stone); }
+.footer-tagline {
+  text-align: center; padding: 20px 0 0; margin-top: 20px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--display); font-size: 0.88rem;
+  font-style: italic; color: var(--gold-muted);
+}
+
+/* ════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════════════════════ */
+@media (max-width: 960px) {
+  .featured-card { grid-template-columns: 1fr; }
+  .featured-img { min-height: 280px; }
+  .post-grid { grid-template-columns: repeat(2, 1fr); }
+  .secondary-grid { grid-template-columns: 1fr; }
+  .subscribe-inner { grid-template-columns: 1fr; gap: 28px; }
+  .blog-cta-card { grid-template-columns: 1fr; }
+  .blog-cta-left { border-right: none; border-bottom: 1px solid var(--rule); }
+  .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
+  .footer-right { flex-direction: column; gap: 12px; }
+}
+@media (max-width: 600px) {
+  .nav-links a:not(.nav-cta-btn) { display: none; }
+  .masthead h1 { font-size: 2.4rem; }
+  .post-grid { grid-template-columns: 1fr; }
+  .featured-content { padding: 32px 28px; }
+  .stacked-item { grid-template-columns: 1fr; }
+  .stacked-thumb { display: none; }
+  .subscribe-form { flex-direction: column; }
+  .subscribe-input { border-right: 1px solid rgba(255,255,255,0.12); }
+  .cat-nav-inner { gap: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════════ NAV ════════ -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-wordmark">Chan García</a>
+    <div class="nav-links">
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="evidence.html">Evidence</a>
+      <a href="exposure-report.html" class="active">The Exposure Report</a>
+      <a href="contact.html" class="nav-cta-btn">Engage</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════ MASTHEAD ════════ -->
+<section class="masthead">
+  <div class="container">
+    <p class="masthead-brand anim d1">Chan García</p>
+    <h1 class="anim d2">The Exposure <em>Report</em></h1>
+    <p class="masthead-sub anim d3">Regulatory intelligence and governance risk analysis for decision-makers operating in or entering Mexico.</p>
+  </div>
+</section>
+
+<!-- ════════ CATEGORY NAV ════════ -->
+<div class="cat-nav">
+  <div class="container">
+    <div class="cat-nav-inner">
+      <span class="cat-link active">All</span>
+      <span class="cat-link">Governance Risk</span>
+      <span class="cat-link">Regulatory Updates</span>
+      <span class="cat-link">Due Diligence</span>
+      <span class="cat-link">Mexico Market Entry</span>
+      <span class="cat-link">Financial Exposure</span>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ FEATURED POST ════════ -->
+<section class="featured">
+  <div class="container">
+    <div class="featured-card">
+      <!-- Photo area -->
+      <div class="featured-img">
+        <div class="featured-img-placeholder">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="8" width="40" height="32" rx="2" stroke="rgba(250,248,244,0.25)" stroke-width="1.5"/>
+            <circle cx="16" cy="20" r="4" stroke="rgba(250,248,244,0.25)" stroke-width="1.5"/>
+            <path d="M4 32L16 24L28 32L36 26L44 32" stroke="rgba(250,248,244,0.25)" stroke-width="1.5"/>
+          </svg>
+          <span class="featured-img-note">Featured article photo</span>
+          <span class="featured-img-size">Recommended: 590 × 420px</span>
+        </div>
+      </div>
+      <!-- Content -->
+      <div class="featured-content">
+        <div class="featured-label">Featured</div>
+        <div class="featured-meta">
+          <span class="featured-category">Governance Risk</span>
+          <span class="featured-date">March 2026</span>
+          <span class="featured-read-time">8 min read</span>
+        </div>
+        <h2>Why Governance Risk Needs a <em>Number,</em> Not a Narrative</h2>
+        <p class="featured-excerpt">Investment committees don't make capital allocation decisions based on qualitative risk descriptions. They need probability-weighted scenarios, exposure ranges, and quantified downside. This piece examines why the gap between legal narrative and financial quantification persists — and what it costs decision-makers every day.</p>
+        <a href="#" class="featured-read">Read the full analysis</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ POST GRID ════════ -->
+<section class="posts">
+  <div class="container">
+    <div class="posts-header">
+      <h2>Recent Analysis</h2>
+    </div>
+    <div class="post-grid">
+
+      <!-- Post 1 -->
+      <div class="post-card">
+        <div class="post-img">
+          <div class="post-img-placeholder">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="8" width="40" height="32" rx="2" stroke="rgba(250,248,244,0.2)" stroke-width="1.5"/><circle cx="16" cy="20" r="4" stroke="rgba(250,248,244,0.2)" stroke-width="1.5"/><path d="M4 32L16 24L28 32L36 26L44 32" stroke="rgba(250,248,244,0.2)" stroke-width="1.5"/></svg>
+            <span class="post-img-note">Article photo · 380 × 200px</span>
+          </div>
+        </div>
+        <div class="post-body">
+          <div class="post-meta">
+            <span class="post-category">Due Diligence</span>
+            <span class="post-date">Mar 2026</span>
+          </div>
+          <h3>Mexico Governance Risk Due Diligence: What PE Firms Need to Know</h3>
+          <p>A practical framework for private equity firms conducting governance due diligence on Mexican targets — including the exposure vectors that standard legal review frequently underestimates.</p>
+          <div class="post-footer">
+            <span class="post-read-time">10 min read</span>
+            <span class="post-arrow">→</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post 2 -->
+      <div class="post-card">
+        <div class="post-img">
+          <div class="post-img-placeholder">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="8" width="40" height="32" rx="2" stroke="rgba(250,248,244,0.2)" stroke-width="1.5"/><circle cx="16" cy="20" r="4" stroke="rgba(250,248,244,0.2)" stroke-width="1.5"/><path d="M4 32L16 24L28 32L36 26L44 32" stroke="rgba(250,248,244,0.2)" stroke-width="1.5"/></svg>
+            <span class="post-img-note">Article photo · 380 × 200px</span>
+          </div>
+        </div>
+        <div class="post-body">
+          <div class="post-meta">
+            <span class="post-category">Mexico Market Entry</span>
+            <span class="post-date">Mar 2026</span>
+          </div>
+          <h3>IMMEX Compliance Exposure: Financial Risks for Foreign Manufacturers</h3>
+          <p>IMMEX obligations create material financial exposure that is frequently underestimated during market entry. This analysis maps the specific compliance gaps and their quantifiable cost.</p>
+          <div class="post-footer">
+            <span class="post-read-time">8 min read</span>
+            <span class="post-arrow">→</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post 3 -->
+      <div class="post-card">
+        <div class="post-img">
+          <div class="post-img-placeholder">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="8" width="40" height="32" rx="2" stroke="rgba(250,248,244,0.2)" stroke-width="1.5"/><circle cx="16" cy="20" r="4" stroke="rgba(250,248,244,0.2)" stroke-width="1.5"/><path d="M4 32L16 24L28 32L36 26L44 32" stroke="rgba(250,248,244,0.2)" stroke-width="1.5"/></svg>
+            <span class="post-img-note">Article photo · 380 × 200px</span>
+          </div>
+        </div>
+        <div class="post-body">
+          <div class="post-meta">
+            <span class="post-category">Governance Risk</span>
+            <span class="post-date">Feb 2026</span>
+          </div>
+          <h3>The Independence Problem in Risk Advisory</h3>
+          <p>Most firms that assess governance risk also sell implementation. Why that structural conflict matters for investment committees — and what the alternative looks like.</p>
+          <div class="post-footer">
+            <span class="post-read-time">6 min read</span>
+            <span class="post-arrow">→</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post 4 -->
+      <div class="post-card">
+        <div class="post-img">
+          <div class="post-img-placeholder">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="8" width="40" height="32" rx="2" stroke="rgba(250,248,244,0.2)" stroke-width="1.5"/><circle cx="16" cy="20" r="4" stroke="rgba(250,248,244,0.2)" stroke-width="1.5"/><path d="M4 32L16 24L28 32L36 26L44 32" stroke="rgba(250,248,244,0.2)" stroke-width="1.5"/></svg>
+            <span class="post-img-note">Article photo · 380 × 200px</span>
+          </div>
+        </div>
+        <div class="post-body">
+          <div class="post-meta">
+            <span class="post-category">Regulatory Updates</span>
+            <span class="post-date">Feb 2026</span>
+          </div>
+          <h3>SAT Enforcement Trends: What CFOs Should Monitor in 2026</h3>
+          <p>Mexico's tax authority has shifted enforcement patterns materially. The transfer pricing scrutiny, related-party reviews, and documentation requirements that create exposure for foreign-owned entities.</p>
+          <div class="post-footer">
+            <span class="post-read-time">7 min read</span>
+            <span class="post-arrow">→</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post 5 -->
+      <div class="post-card">
+        <div class="post-img">
+          <div class="post-img-placeholder">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="8" width="40" height="32" rx="2" stroke="rgba(250,248,244,0.2)" stroke-width="1.5"/><circle cx="16" cy="20" r="4" stroke="rgba(250,248,244,0.2)" stroke-width="1.5"/><path d="M4 32L16 24L28 32L36 26L44 32" stroke="rgba(250,248,244,0.2)" stroke-width="1.5"/></svg>
+            <span class="post-img-note">Article photo · 380 × 200px</span>
+          </div>
+        </div>
+        <div class="post-body">
+          <div class="post-meta">
+            <span class="post-category">Financial Exposure</span>
+            <span class="post-date">Feb 2026</span>
+          </div>
+          <h3>Transfer Pricing Risk in Mexico Subsidiary Structures</h3>
+          <p>Intercompany arrangements between U.S. parents and Mexican subsidiaries create transfer pricing exposure that SAT is increasingly scrutinizing. A guide to the specific risk vectors.</p>
+          <div class="post-footer">
+            <span class="post-read-time">9 min read</span>
+            <span class="post-arrow">→</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post 6 -->
+      <div class="post-card">
+        <div class="post-img">
+          <div class="post-img-placeholder">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="8" width="40" height="32" rx="2" stroke="rgba(250,248,244,0.2)" stroke-width="1.5"/><circle cx="16" cy="20" r="4" stroke="rgba(250,248,244,0.2)" stroke-width="1.5"/><path d="M4 32L16 24L28 32L36 26L44 32" stroke="rgba(250,248,244,0.2)" stroke-width="1.5"/></svg>
+            <span class="post-img-note">Article photo · 380 × 200px</span>
+          </div>
+        </div>
+        <div class="post-body">
+          <div class="post-meta">
+            <span class="post-category">Due Diligence</span>
+            <span class="post-date">Jan 2026</span>
+          </div>
+          <h3>What Investment Committees Actually Need from Mexico Due Diligence</h3>
+          <p>Committees don't need longer legal memos. They need probability-weighted exposure ranges they can incorporate into deal models. What that deliverable looks like in practice.</p>
+          <div class="post-footer">
+            <span class="post-read-time">7 min read</span>
+            <span class="post-arrow">→</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════ EDITORIAL BREAK ════════ -->
+<div class="editorial-break">
+  <div class="container">
+    <div class="editorial-inner">
+      <blockquote>The difference between knowing a risk exists and knowing what it costs is the difference between a legal memo and a decision.</blockquote>
+      <p class="editorial-source">Chan García — We Make Governance Measurable</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ SECONDARY GRID ════════ -->
+<section class="secondary">
+  <div class="container">
+    <div class="posts-header">
+      <h2>More from The Exposure Report</h2>
+    </div>
+    <div class="secondary-grid">
+
+      <!-- Wide card -->
+      <div class="wide-card">
+        <div class="wide-card-img">
+          <div class="post-img-placeholder">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="8" width="40" height="32" rx="2" stroke="rgba(250,248,244,0.2)" stroke-width="1.5"/><circle cx="16" cy="20" r="4" stroke="rgba(250,248,244,0.2)" stroke-width="1.5"/><path d="M4 32L16 24L28 32L36 26L44 32" stroke="rgba(250,248,244,0.2)" stroke-width="1.5"/></svg>
+            <span class="post-img-note">Article photo · 560 × 240px</span>
+          </div>
+        </div>
+        <div class="wide-card-body">
+          <div class="post-meta">
+            <span class="post-category">Mexico Market Entry</span>
+            <span class="post-date">Jan 2026</span>
+          </div>
+          <h3>Nearshoring Compliance Checklist: Regulatory Exposure Before You Commit</h3>
+          <p>A structured checklist of regulatory, governance, and compliance exposure vectors that U.S. companies should evaluate before committing capital to a nearshoring operation in Mexico.</p>
+        </div>
+      </div>
+
+      <!-- Stacked list -->
+      <div class="stacked-list">
+        <div class="stacked-item">
+          <div class="stacked-thumb"><span class="stacked-thumb-note">Photo</span></div>
+          <div class="stacked-content">
+            <div class="post-meta">
+              <span class="post-category">Governance Risk</span>
+              <span class="post-date">Jan 2026</span>
+            </div>
+            <h4>How to Quantify Governance Risk for an Investment Committee</h4>
+          </div>
+        </div>
+        <div class="stacked-item">
+          <div class="stacked-thumb"><span class="stacked-thumb-note">Photo</span></div>
+          <div class="stacked-content">
+            <div class="post-meta">
+              <span class="post-category">Financial Exposure</span>
+              <span class="post-date">Dec 2025</span>
+            </div>
+            <h4>The Cost of Not Quantifying: When Legal Memos Aren't Enough</h4>
+          </div>
+        </div>
+        <div class="stacked-item">
+          <div class="stacked-thumb"><span class="stacked-thumb-note">Photo</span></div>
+          <div class="stacked-content">
+            <div class="post-meta">
+              <span class="post-category">Regulatory Updates</span>
+              <span class="post-date">Dec 2025</span>
+            </div>
+            <h4>STPS Labor Compliance: Exposure Ranges for Manufacturing in Mexico</h4>
+          </div>
+        </div>
+        <div class="stacked-item">
+          <div class="stacked-thumb"><span class="stacked-thumb-note">Photo</span></div>
+          <div class="stacked-content">
+            <div class="post-meta">
+              <span class="post-category">Governance Risk</span>
+              <span class="post-date">Nov 2025</span>
+            </div>
+            <h4>Mexico Is Not Latin America: Why Market-Specific Depth Matters</h4>
+          </div>
+        </div>
+        <div class="stacked-item">
+          <div class="stacked-thumb"><span class="stacked-thumb-note">Photo</span></div>
+          <div class="stacked-content">
+            <div class="post-meta">
+              <span class="post-category">Due Diligence</span>
+              <span class="post-date">Nov 2025</span>
+            </div>
+            <h4>Environmental Permit Risk in Mexican Acquisitions</h4>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════ SUBSCRIBE ════════ -->
+<div class="subscribe">
+  <div class="container">
+    <div class="subscribe-inner">
+      <div class="subscribe-left">
+        <h2>Get The Exposure <em>Report</em> delivered.</h2>
+        <p>New analysis sent when we publish — typically two to three times per month. No spam. Unsubscribe anytime.</p>
+      </div>
+      <div>
+        <div class="subscribe-form">
+          <input type="email" class="subscribe-input" placeholder="your@email.com">
+          <button class="subscribe-btn">Subscribe</button>
+        </div>
+        <p class="subscribe-note">For decision-makers, not inboxes.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ BLOG CTA ════════ -->
+<section class="blog-cta">
+  <div class="container">
+    <div class="blog-cta-card">
+      <div class="blog-cta-left">
+        <h2>Want to know your <em>specific</em> exposure?</h2>
+        <p>The Exposure Report provides general intelligence. An Independent Assessment provides your specific financial exposure range — quantified, probability-weighted, and committee-ready.</p>
+        <a href="contact.html" class="blog-cta-btn">Request an Assessment</a>
+      </div>
+      <div class="blog-cta-right">
+        <div class="blog-cta-stat">
+          <div class="blog-cta-stat-value">1 of 36</div>
+          <div class="blog-cta-stat-label">Authorized PRIME evaluators in Mexico</div>
+        </div>
+        <div class="blog-cta-stat">
+          <div class="blog-cta-stat-value">5-Phase</div>
+          <div class="blog-cta-stat-label">Structured actuarial methodology</div>
+        </div>
+        <div class="blog-cta-stat">
+          <div class="blog-cta-stat-value">Independent</div>
+          <div class="blog-cta-stat-label">Assessment only — no implementation conflicts</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">Chan García</div>
+      <div class="footer-right">
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="evidence.html">Evidence</a>
+        <a href="exposure-report.html">The Exposure Report</a>
+        <a href="contact.html">Contact</a>
+        <span class="footer-copy">© 2026 Chan García. Mexico City.</span>
+      </div>
+    </div>
+    <div class="footer-tagline">We Make Governance Measurable.</div>
+  </div>
+</footer>
+
+</body>
+</html>
